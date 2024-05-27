@@ -1,0 +1,53 @@
+.header {
+    width: 100vw;
+    height: 10vh;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+    height: 100px;
+}
+
+.return__link {
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #0000ff;
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+
+.main {
+    width: 100vw;
+    height: 90vh;
+    margin: 100px auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+    text-align: center;
+}
+
+.menu-nav__item {
+    margin-bottom: 20px;
+}
+
+.menu-nav__link {
+    font-size: 24px;
+    font-weight: 400;
+    color: #0000ff;
+    text-decoration: none;
+}
+
+.register-form__button,
+.login-form__button,
+.logout-form__button {
+    border: none;
+    background: none;
+    color: #0000ff;
+    font-size: 24px;
+    font-weight: 400;
+    cursor: pointer;
+}
