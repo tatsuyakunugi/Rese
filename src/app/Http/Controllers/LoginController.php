@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\LoginRequest;
 
 class LoginController extends Controller
 {
@@ -12,11 +13,11 @@ class LoginController extends Controller
         return view('auth.login');
     }
 
-    public function postLogin(Request $request)
+    public function postLogin(LoginRequest $request)
     {
         $user_info = $request->validate([
             'email' => 'email|required',
-            'password' => 'required|min:4',
+            'password' => 'required|min:8',
         ]);
 
         // ログインに成功したとき

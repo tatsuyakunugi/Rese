@@ -31,6 +31,13 @@
                         </div>
                     </div>
                 </div>
+                @error('name')
+                <div class="form__error">
+                    <p class="form__error-message">
+                        {{ $errors->first('name') }}
+                    </p>
+                </div>
+                @enderror
                 <div class="form__group">
                     <div class="form__group-title">
                         <span class="form__label--item">Email</span>
@@ -41,6 +48,13 @@
                         </div>
                     </div>
                 </div>
+                @error('email')
+                <div class="form__error">
+                    <p class="form__error-message">
+                        {{ $errors->first('email') }}
+                    </p>
+                </div>
+                @enderror
                 <div class="form__group">
                     <div class="form__group-title">
                         <span class="form__label--item">Password</span>
@@ -51,6 +65,13 @@
                         </div>
                     </div>
                 </div>
+                @error('password')
+                <div class="form__error">
+                    <p class="form__error-message">
+                        {{ $errors->first('password') }}
+                    </p>
+                </div>
+                @enderror
                 <div class="form__button">
                     <button class="form__button-submit" type="submit">登録</button>
                 </div>
