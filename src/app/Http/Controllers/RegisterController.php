@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
@@ -13,13 +14,13 @@ class RegisterController extends Controller
         return view('auth.register');
     }
 
-    public function postRegister(Request $request)
+    public function postRegister(RegisterRequest $request)
     {
         //バリテーション
         $this->validate($request,[
             'name' => 'required',
             'email' => 'email|required|unique:users',
-            'password' => 'required|min:4',
+            'password' => 'required|min:8',
         ]);
 
         //DBインサート
