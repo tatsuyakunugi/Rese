@@ -17,21 +17,23 @@
     <main class="main">
         <div class="shop__content">
             <div class="shop__wrapper">
+                @foreach ($shops as $shop)
                 <div class="shop-card">
                     <div class="shop-card__img">
-                        <img src="" alt="">
+                        <img src="{{ Storage::url($shop->shop_image_path) }}" alt="">
                     </div>
                     <div class="shop-card__content">
-                        <h2 class="shop-name">仙人</h2>
+                        <h2 class="shop-name">{{ $shop->shop_name }}</h2>
                         <div class="shop-card__content-tag">
-                            <p class="shop-area">＃東京都</p>
-                            <p class="shop-genre">＃寿司</p>
+                            <p class="shop-area">＃{{ $shop->area->area_name }}</p>
+                            <p class="shop-genre">＃{{ $shop->genre->genre_name }}</p>
                         </div>
                         <div class="link">
                             <a class="detail__link" href="/detail">詳しく見る</a>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </main>
