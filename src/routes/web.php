@@ -5,6 +5,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserContoroller;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ShopUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,6 @@ Route::get('/thanks', [RegisterController::class, 'thanks']);
 Route::get('/login', [LoginController::class, 'getLogin']);
 Route::post('/login', [LoginController::class, 'postLogin']);
 Route::get('/logout', [LoginController::class, 'getLogout']);
+
+Route::get('/create', [ShopUploadController::class, 'create'])->name('create');
+Route::post('/shop_upload', [ShopUploadController::class, 'store'])->name('shop_upload');
