@@ -18,7 +18,7 @@ use App\Http\Controllers\ShopUploadController;
 |
 */
 
-Route::get('/', [ShopController::class, 'index']);
+Route::get('/', [ShopController::class, 'index'])->name('shop.index');
 Route::get('/detail', [ShopController::class, 'detail']);
 
 Route::get('/menu', [UserContoroller::class, 'menu']);
