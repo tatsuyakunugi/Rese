@@ -1,13 +1,14 @@
 .header {
-    width: 100vw;
-    height: 10vh;
+    max-width: 1230px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 20px 15px;
 }
 
 .header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
-    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header__logo {
