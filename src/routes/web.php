@@ -20,6 +20,10 @@ use App\Http\Controllers\ShopUploadController;
 
 Route::get('/', [ShopController::class, 'index'])->name('shop.index');
 Route::get('/detail', [ShopController::class, 'detail']);
+Route::middleware('auth')->group(function () {
+    Route::post('/likes', [ShopController::class, 'store'])->name('likes.store');
+    Route::delete('/likes', [ShopController::class, 'destroy'])->name('likes.destroy');
+});
 
 Route::get('/menu', [UserContoroller::class, 'menu']);
 Route::get('/mypage', [UserContoroller::class, 'mypage']);
