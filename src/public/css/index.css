@@ -17,6 +17,11 @@
     text-decoration: none;
 }
 
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
 .main {
     width: 100vw;
     height: 90vh;
@@ -55,16 +60,23 @@
     display: inline-block;
 }
 
-.link {
+.shop-card__items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop__link,
+.shop__control {
     margin-bottom: 10px;
 }
 
-.detail__link {
+.detail__link-button {
     padding: 5px 10px;
     font-weight: 400;
     font-size: 12px;
     background-color: #0000ff;
     color: #fff;
+    border: none;
     border-radius: 3px;
     text-decoration: none; 
 }
