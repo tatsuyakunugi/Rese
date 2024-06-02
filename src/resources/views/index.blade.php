@@ -57,8 +57,31 @@
                             <p class="shop-area">#{{ $shop->area->area_name }}</p>
                             <p class="shop-genre">#{{ $shop->genre->genre_name }}</p>
                         </div>
-                        <div class="link">
-                            <a class="detail__link" href="/detail">詳しく見る</a>
+                        <div class="shop-card__items">
+                            <div class="shop__link">
+                                <form class="detail__link-form" action="/detail" method="get">
+                                    <input type="hidden" name="shop_id" value="{{ $shop->id }}">
+                                    <button class="detail__link-button">詳しく見る</button>
+                                </form>
+                            </div>
+                            @if(Auth::check())
+                            <div class="shop__control">    
+                                @if($existingLike)
+                                <form class="unlike-form" action="{{ route('likes.destroy') }}" method="post">
+                                @method('DELETE')
+                                @csrf
+                                    <input type="hidden" name="shop_id" value="{{ $shop->id }}">
+                                    <button class="like-button" type="submit">お気に入り解除</button>
+                                </form>
+                                @else
+                                <form class="like-form" action="{{ route('likes.store') }}" method="post">
+                                @csrf
+                                    <input type="hidden" name="shop_id" value="{{ $shop->id }}">
+                                    <button class="unlike-button" type="submit">お気に入り登録</button>
+                                </form>
+                                @endif
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
