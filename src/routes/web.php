@@ -5,6 +5,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserContoroller;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ShopUploadController;
 
 /*
@@ -20,10 +21,6 @@ use App\Http\Controllers\ShopUploadController;
 
 Route::get('/', [ShopController::class, 'index'])->name('shop.index');
 Route::get('/detail', [ShopController::class, 'detail']);
-Route::middleware('auth')->group(function () {
-    Route::post('/likes', [ShopController::class, 'store'])->name('likes.store');
-    Route::delete('/likes', [ShopController::class, 'destroy'])->name('likes.destroy');
-});
 
 Route::get('/menu', [UserContoroller::class, 'menu']);
 Route::get('/mypage', [UserContoroller::class, 'mypage']);
@@ -35,6 +32,11 @@ Route::get('/thanks', [RegisterController::class, 'thanks']);
 Route::get('/login', [LoginController::class, 'getLogin']);
 Route::post('/login', [LoginController::class, 'postLogin']);
 Route::get('/logout', [LoginController::class, 'getLogout']);
+
+Route::middleware('auth')->group(function () {
+    Route::post('/likes/{shop}', [LikeController::class, 'store'])->name('likes.store');
+    Route::delete('/likes{shop}', [LikeController::class, 'destroy'])->name('likes.destroy');
+});
 
 Route::get('/create', [ShopUploadController::class, 'create'])->name('create');
 Route::post('/shop_upload', [ShopUploadController::class, 'store'])->name('shop_upload');
