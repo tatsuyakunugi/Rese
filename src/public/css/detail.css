@@ -1,17 +1,103 @@
 .header {
-    width: 100vw;
-    height: 10vh;
+    max-width: 1230px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 20px 15px;
 }
 
 .header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
-    height: 100px;
+    width: 100%;
 }
 
 .header__logo {
     font-weight: bold;
     font-size: 32px;
     text-decoration: none;
+}
+
+.main {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+.detail__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop-detail {
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+.shop-name {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+  
+.shop__img img {
+    width: 100%;
+}
+
+.shop__tag,
+.shop__content {
+    font-size: 14px;
+    text-align: light;
+}
+  
+.shop-area,
+.shop-genre {
+    display: inline-block;
+}
+
+.reservation-detail {
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+.reservation-card {
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    background-color: #0000ff;
+    color: #fff;
+}
+
+.reservation-form {
+    padding: 20px 15px;
+}
+
+.reservation__title {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.select__reservation-date  input {
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.select__reservation-time select,
+.select__number_of_people select {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.reservation-form__button {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.reservation-form__button-submit {
+    font-weight: 400;
+    font-size: 12px;
+    background-color: #0000dd;
+    color: #fff;
+    border: none;
+    text-decoration: none; 
+    cursor: pointer;
 }

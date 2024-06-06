@@ -20,7 +20,7 @@ use App\Http\Controllers\ShopUploadController;
 */
 
 Route::get('/', [ShopController::class, 'index'])->name('shop.index');
-Route::get('/detail', [ShopController::class, 'detail']);
+Route::get('/detail/{shop_id}', [ShopController::class, 'detail']);
 
 Route::get('/menu', [UserContoroller::class, 'menu']);
 Route::get('/mypage', [UserContoroller::class, 'mypage']);
@@ -34,8 +34,8 @@ Route::post('/login', [LoginController::class, 'postLogin']);
 Route::get('/logout', [LoginController::class, 'getLogout']);
 
 Route::middleware('auth')->group(function () {
-    Route::post('/likes/{shop}', [LikeController::class, 'store'])->name('likes.store');
-    Route::delete('/likes{shop}', [LikeController::class, 'destroy'])->name('likes.destroy');
+    Route::post('/like/{shop}', [LikeController::class, 'store'])->name('likes.store');
+    Route::delete('/unlike{shop}', [LikeController::class, 'destroy'])->name('likes.destroy');
 });
 
 Route::get('/create', [ShopUploadController::class, 'create'])->name('create');

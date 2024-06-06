@@ -58,11 +58,8 @@
                             <p class="shop-genre">#{{ $shop->genre->genre_name }}</p>
                         </div>
                         <div class="shop-card__items">
-                            <div class="shop__link">
-                                <form class="detail__link-form" action="/detail" method="get">
-                                    <input type="hidden" name="shop_id" value="{{ $shop->id }}">
-                                    <button class="detail__link-button">詳しく見る</button>
-                                </form>
+                            <div class="detail__link-button">
+                                <a class="detail__link" href="/detail/{{ $shop->id }}">詳しく見る</a>
                             </div>
                             @if(Auth::check())
                             <div class="shop__control">    
@@ -72,7 +69,7 @@
                                     <button class="like-button" type="submit">お気に入り登録</button>
                                 </form>
                                 @else
-                                <form class="like-form" action="{{ route('likes.destroy', $shop) }}" method="post">
+                                <form class="unlike-form" action="{{ route('likes.destroy', $shop) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button class="unlike-button" type="submit">お気に入り解除</button>

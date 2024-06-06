@@ -9,7 +9,9 @@ use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Like;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ShopController extends Controller
 {
@@ -54,8 +56,11 @@ class ShopController extends Controller
         return view('index', compact('shops', 'areas', 'genres', 'keyword'));
     }
 
-    public function detail()
+    public function detail($id)
     {
-        return view('detail');
+        $shop = Shop::find($id);
+        $times = Config::get('times');
+
+        return view('detail', compact('shop', 'times'));
     }
 }
