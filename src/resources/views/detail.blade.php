@@ -7,6 +7,7 @@
     <title>Rese</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/detail.css') }}" />
+    @livewireStyles
 </head>
 <body>
     <header class="header">
@@ -36,40 +37,9 @@
                     <p>{{ $shop->content }}</p>
                 </div>
             </div>
-            @if(Auth::check())
-            <div class="reservation-detail">
-                <div class="reservation-card">
-                    <form class="reservation-form" action="/done" method="get">
-                        <div class="reservation__title">
-                            <h2>予約</h2>
-                        </div>
-                        <div class="select__reservation-date">
-                            <input type="date" name="date">
-                        </div>
-                        <div class="select__reservation-time">
-                            <select class="select__time" name="time" id="time">
-                                @foreach($times as $key => $time_variation)
-                                <option value="{{ $key }}">{{ $time_variation }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="select__number_of_people">
-                            <select class="select__number_of_people" name="number_of_people" id="number_of_people">
-                                <option>選択してください</option>
-                                @for($i = 1; $i <= 30; $i++)
-                                <option>{{ $i }}人</option>
-                                @endfor
-                            </select>
-                        </div>
-                        <div class="reservation-form__button">
-                            <input type="hidden" name="shop_id" value="{{ $shop->id }}">
-                            <button class="reservation-form__button-submit" type="submit">予約する</button>
-                        </div>    
-                    </form>
-                </div>
-            </div>
-            @endif
+            <livewire:reservation :shop="$shop">
         </div>  
     </main>
+    @livewireScripts
 </body>
 </html>
