@@ -1,0 +1,60 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use App\Models\Shop;
+use App\Models\Area;
+use App\Models\Genre;
+use App\Models\Like;
+use App\Models\Reservation;
+use App\Http\Requests\ReservationRequest;
+use Carbon\Carbon;
+
+class ReservationController extends Controller
+{
+    public function store(ReservationRequest $request)
+    {
+        $this->validate($request,[
+            'date' => 'required',
+            'time' => 'required',
+            'number_of_people' => 'required',
+        ]);
+
+        Carbon::useMonthsOverflow(false);
+
+        $now = Carbon::now();
+        $user = Auth::user();
+        $shop = Shop::find($request->input('shop_id'));
+        $reservation_datetime = Carbon::parse($request->input('date') . '' . $request->input('time'));
+        $number_of_people = $request->input('number_of_people');
+
+        if($reservation_datetime->isPast())
+        {
+            return back()->with('error', '現在日時よりも前の予約は出来ません');
+        }
+
+        if(Reservation::where('user_id', $user->id)->where('shop_id', $shop->id)->where('reservation_datetime', $reservation_datetime)->exists())
+        {
+            $reservation = Reservation::where('user_id', $user->id)->where('shop_id', $shop->id)->where('reservation_datetime', $reservation_datetime)->first();
+            
+            if(($reservation->reservation_datetime) == $reservation_datetime)
+            {
+                return back()->with('error', '予約が重複しています');
+            }
+        }
+
+        $reservation = new Reservation([
+            'user_id' => $user->id,
+            'shop_id' => $shop->id,
+            'reservation_datetime' => $reservation_datetime,
+            'number_of_people' => $number_of_people,
+        ]);
+
+        $reservation->save();
+
+        return view('done');
+    }
+}
