@@ -20,7 +20,7 @@
             <div class="shop-detail">
                 <div class="shop-detail__header">
                     <div class="link">
-                        <a href=""><</a>
+                        <a class="link__button" href=""><</a>
                     </div>
                     <div class="shop-name">
                         <h2>{{ $shop->shop_name }}</h2>
