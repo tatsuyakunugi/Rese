@@ -1,0 +1,25 @@
+.header {
+    max-width: 1230px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+.header__inner {
+    width: 100%;
+}
+
+.header__logo {
+    font-weight: bold;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.main {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+.mypage__content {
+    width: 100%;
+}
