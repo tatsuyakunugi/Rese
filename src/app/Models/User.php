@@ -61,4 +61,9 @@ class User extends Authenticatable
     {
         return $this->likes()->where('shop_id', $shopId)->exists();
     }
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }
