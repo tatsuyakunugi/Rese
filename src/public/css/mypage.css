@@ -18,8 +18,128 @@
 .main {
     max-width: 1230px;
     margin: 0 auto;
+    padding: 20px 15px;
 }
 
 .mypage__content {
     width: 100%;
+}
+
+.user-name {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.mypage__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reservation__info {
+    width: 45%;
+    padding: 10px;
+}
+
+.reservation__info--title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.reservation__card {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #0000ff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+}
+
+.reservation__card--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reservation__card--group {
+    display: flex;
+    text-align: left;
+    align-items: center;
+}
+
+.reservation__tag {
+    width: 20%;
+    margin-right: 20px;
+}
+
+.likes__info {
+    width: 45%;
+    padding: 10px;
+}
+
+.likes__info--title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.shop__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.shop-card {
+    width: 40%;
+    margin: 20px auto 0;
+    margin-right: 10px;
+    border: 1px solid #808080;
+    border-radius: 3px;
+    box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.shop-card__img img {
+    width: 100%;
+}
+  
+.shop-card__content {
+    padding: 10px 20px;
+}
+  
+.shop-name {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.shop-card__content-tag {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: light;
+}
+  
+.shop-area,
+.shop-genre {
+    display: inline-block;
+}
+
+.shop-card__items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop__link,
+.shop__control {
+    margin-bottom: 10px;
+}
+
+.detail__link {
+    padding: 5px 10px;
+    background-color: #0000ff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: none;
 }
