@@ -18,10 +18,10 @@
         <div class="main__content">
             <div class="completion-card">
                 <div class="completion-card__content">
-                    <div class="completion-card__ttl">
-                        <p class="completion-card__message">
-                            ご予約ありがとうございます
-                        </p>
+                    <div class="session__message">
+                        @if(Session::has('message'))
+                        <p class="completion-card__message">{{ session('message') }}</p>
+                        @endif
                     </div>
                     <div class="link">
                         <a class="return__link" href="/">戻る</a>
