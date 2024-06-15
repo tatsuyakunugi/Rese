@@ -20,7 +20,9 @@
             <div class="shop-detail">
                 <div class="shop-detail__header">
                     <div class="link">
+                        @if(Auth::check())
                         <a class="link__button" href="mypage"><</a>
+                        @endif
                     </div>
                     <div class="shop-name">
                         <h2>{{ $shop->shop_name }}</h2>
