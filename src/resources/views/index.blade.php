@@ -34,10 +34,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="keyword" value="{{ $keyword }}" placeholder="Search...">
+                        <input class="search-form__button-submit" type="submit" name="submit" value="検索">
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="submit" value="検索">
+                        <input class="keyword-select" type="text" name="keyword" value="{{ $keyword }}" placeholder="Search...">
                     </div>
                 </form>
             </div>
