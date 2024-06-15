@@ -1,13 +1,13 @@
 .header {
-    width: 100vw;
-    height: 10vh;
+    max-width: 1230px;
+    height: 100px;
 }
 
 .header__inner {
     margin: 0 auto;
     padding: 20px 15px;
-    max-width: 1230px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
 }
 
 .return__link {
@@ -22,11 +22,9 @@
 }
 
 .main {
-    width: 100vw;
-    height: 90vh;
+    max-width: 1230px;
     margin: 100px auto;
     padding: 20px 15px;
-    max-width: 1230px;
     text-align: center;
 }
 
