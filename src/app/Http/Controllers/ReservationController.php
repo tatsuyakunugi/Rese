@@ -66,4 +66,39 @@ class ReservationController extends Controller
         Session::put('message', '予約を取り消しました');
         return view('done');
     }
+
+    public function edit($id)
+    {
+        $reservation = Reservation::find($id);
+        return view('edit', compact('reservation'));
+    }
+
+    public function update(ReservationRequest $request)
+    {
+        $this->validate($request,[
+            'date' => 'required',
+            'time' => 'required',
+            'number_of_people' => 'required',
+        ]);
+
+        Carbon::useMonthsOverflow(false);
+
+        $now = Carbon::now();
+        $reservation = Reservation::find($request->input('reservation_id'));
+        $reservation_datetime = Carbon::parse($request->input('date') . '' . $request->input('time'));
+        $number_of_people = $request->input('number_of_people');
+
+        if($reservation_datetime->isPast())
+        {
+            return back()->with('error', '現在日時よりも前の予約は出来ません');
+        }
+
+        $reservation->update([
+            'reservation_datetime' => $reservation_datetime,
+            'number_of_people' => $number_of_people,
+        ]);
+
+        Session::put('message', 'ご予約内容を変更しました');
+        return view('done');
+    }
 }

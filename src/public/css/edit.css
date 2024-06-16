@@ -1,0 +1,154 @@
+.header {
+    max-width: 1230px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+.header__inner {
+    width: 100%;
+}
+
+.header__logo {
+    font-weight: bold;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.main {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+.edit__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reservation__status {
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+.shop-detail {
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+.shop-detail__header
+{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.link {
+    margin-right: 20px;
+}
+
+.link__button {
+    border: none;
+    border-radius: 3px;
+    box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+  
+.shop__img img {
+    width: 100%;
+}
+
+.reservation__status--group {
+    display: flex;
+    align-items: center;
+    text-align: light;
+}
+
+.reservation__status-tag {
+    width: 20%;
+    margin: 0px 20px;
+}
+
+.reservation__status-tag,
+.shop-name,
+.reservation-date,
+.reservation-time,
+.number-of-people {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.reservation-edit {
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+.reservation-edit__card {
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    background-color: #0000ff;
+    color: #fff;
+}
+
+.edit-form {
+    padding: 20px 15px;
+}
+
+.edit-form__title {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.select__reservation-date  input {
+    width: 30%;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.select__reservation-time select,
+.select__number_of_people select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+.edit-form__button {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.edit-form__button-submit {
+    width: 100%;
+    padding: 10px 20px;
+    font-weight: 400;
+    font-size: 12px;
+    background-color: #0000dd;
+    color: #fff;
+    border: none;
+    text-decoration: none; 
+    cursor: pointer;
+}
+
+.edit-form__confirm
+{
+    margin-bottom: 20px;
+}
+.confirm__group {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.confirm-title {
+    margin-right: 20px;
+}

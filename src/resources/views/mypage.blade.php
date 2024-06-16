@@ -33,16 +33,23 @@
                     <div class="reservation__card">
                         <div class="reservation__card--inner">
                             <div class="reservation__card--header">
-                                <div class="reservation">
-                                    <p>予約</p>
+                                <div class="reservation__card--header-item">
+                                    <div class="reservation">
+                                        <p>予約</p>
+                                    </div>
                                 </div>
-                                <div class="form">
-                                    <form class="delete-form" action="{{ route('reservations.destroy') }}" method="post">
-                                        @method('DELETE')
-                                        @csrf
-                                        <input type="hidden" name="reservation_id" value="{{ $reservation->id }}">
-                                        <button class="delete-form__button-submit">取消</button>
-                                    </form>
+                                <div class="reservation__card--header-item">
+                                    <div class="edit__link">
+                                        <a class="edit__link--button" href="{{ route('reservations.edit', $reservation->id) }}">予約変更</a>
+                                    </div>
+                                    <div class="form">
+                                        <form class="delete-form" action="{{ route('reservations.destroy') }}" method="post">
+                                            @method('DELETE')
+                                            @csrf
+                                            <input type="hidden" name="reservation_id" value="{{ $reservation->id }}">
+                                            <button class="delete-form__button-submit">取消</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                             <div class= "reservation__card--group">
