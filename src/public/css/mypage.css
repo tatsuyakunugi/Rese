@@ -62,6 +62,21 @@
     justify-content: space-between;
 }
 
+.reservation__card--header-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit__link {
+    margin-right: 10px;
+}
+
+.edit__link--button {
+    color: #fff;
+    text-decoration: none;
+}
+
 .reservation__card--group {
     display: flex;
     text-align: left;
