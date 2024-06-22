@@ -30,6 +30,7 @@ body {
     width: 40%;
     border: none;
     margin: 0 auto;
+    background-color: #fff;
     border-radius: 3px;
     box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.3);  
 }
@@ -47,12 +48,12 @@ body {
 }
 
 .login-form__items {
-    background-color: #fff;
+    width: 100%;
+    margin-left: 20px;
 }
 
 .form__group {
     display: flex;
-    justify-content: center;
     width: 90%;
     padding: 10px 20px;
     text-align: center;
@@ -76,12 +77,14 @@ body {
 }
 
 .form__button {
-    margin: 20px;
     padding: 10px 20px;
     text-align: right;
 }
 
 .form__button-submit {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 25px;
     padding: 10px;
     width: 20%;
     height: 40px;

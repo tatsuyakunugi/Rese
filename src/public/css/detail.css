@@ -1,3 +1,7 @@
+body {
+    background-color: #F5F5F5;
+}
+
 .header {
     max-width: 1230px;
     height: 100px;
@@ -42,9 +46,13 @@
 }
 
 .link__button {
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #fff;
     border: none;
     border-radius: 3px;
-    box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
     text-decoration: none;
 }
 
@@ -84,6 +92,10 @@
 
 .reservation-form {
     padding: 20px 15px;
+}
+
+.reservation-form__select {
+    margin-bottom: 10px;
 }
 
 .reservation__title {
@@ -131,6 +143,10 @@
 
 .reservation-form__confirm
 {
+    padding: 5px 20px;
+    background-color: #0033FF;
+    border: none;
+    border-radius: 3px;
     margin-bottom: 20px;
 }
 .confirm__group {
