@@ -42,27 +42,30 @@ body {
     margin: 0 auto;
     width: 40%;
     text-align: right;
+    background-color: #fff;
     border: none;
     border-radius: 3px;
     box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.3);  
 }
+
+.register-form__items {
+    margin-left: 20px;
+    width: 100%;
+}
+
   
 .form__group {
     display: flex;
-    width: 90%;
-    padding: 10px 20px;
     text-align: center;
     align-items: center;
+    width: 90%;
+    padding: 10px 20px;
     border-bottom: 3px solid #aaa;
 }
   
 .form__group-title {
     width: 30%;
     color: #aaa;
-}
-
-.register-form__items {
-    background-color: #fff;
 }
 
 .form__input--text input {
@@ -81,6 +84,9 @@ body {
 }
 
 .form__button-submit {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 25px;
     padding: 10px;
     width: 20%;
     height: 40px;
