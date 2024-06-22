@@ -20,7 +20,7 @@
             <div class="shop-detail">
                 <div class="shop-detail__header">
                     <div class="link">
-                        <a class="link__button" href="mypage"><</a>
+                        <a class="link__button" href="/mypage"><</a>
                     </div>
                     <div class="reservation__status">
                         <p>現在のご予約状況</p>
