@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ShopUploadController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,11 @@ Route::middleware('auth')->group(function () {
     Route::put('done', [ReservationController::class, 'update'])->name('reservations.update');
     Route::delete('/done', [ReservationController::class, 'destroy'])->name('reservations.destroy');
 });
+
+Route::middleware('auth')->group(function () {
+    Route::post('/review', [ReviewController::class, 'store'])->name('reviews.store');
+});
+Route::get('/list/{shop_id}', [ReviewController::class, 'list']);
 
 Route::get('/create', [ShopUploadController::class, 'create'])->name('create');
 Route::post('/shop_upload', [ShopUploadController::class, 'store'])->name('shop_upload');
