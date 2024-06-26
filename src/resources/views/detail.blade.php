@@ -21,7 +21,7 @@
                 <div class="shop-detail__header">
                     <div class="link">
                         @if(Auth::check())
-                        <a class="link__button" href="mypage"><</a>
+                        <a class="link__button" href="/mypage"><</a>
                         @endif
                     </div>
                     <div class="shop-name">
@@ -37,6 +37,9 @@
                 </div>
                 <div class="shop__content"> 
                     <p>{{ $shop->content }}</p>
+                </div>
+                <div class="review__link-form">
+                    <a class="review__link" href="/list/{{ $shop->id }}">このお店のレビューをを見る</a>
                 </div>
             </div>
             <livewire:reservation :shop="$shop">
