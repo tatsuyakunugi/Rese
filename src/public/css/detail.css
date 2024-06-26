@@ -77,6 +77,24 @@ body {
     display: inline-block;
 }
 
+.review__link-form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.review__link {
+    padding: 5px 10px;
+    background-color: #fff;
+    color: #0000ff;
+    border: 1px solid #808080;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .reservation-detail {
     width: 45%;
     margin-bottom: 20px;

@@ -39,7 +39,7 @@ class ReservationController extends Controller
 
         if(Reservation::where('user_id', $user->id)->where('shop_id', $shop->id)->where('reservation_datetime', $reservation_datetime)->exists())
         {
-            $reservation = Reservation::where('user_id', $user->id)->where('shop_id', $shop->id)->where('reservation_datetime', $reservation_datetime)->first();
+            $reservation = Reservation::where('user_id', $user->id)->where('shop_id', $shop->id)->whereDate('reservation_datetime', $reservation_datetime)->first();
             
             if(($reservation->reservation_datetime) == $reservation_datetime)
             {
