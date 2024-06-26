@@ -7,6 +7,7 @@
     <title>Rese</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/mypage.css') }}" />
+    @livewireStyles
 </head>
 <body>
     <header class="header">
@@ -86,6 +87,14 @@
                             </div>
                         </div>
                     </div>
+                    <livewire:review :reservation="$reservation">
+                    <div class="alert">
+                        @if(session('error'))
+                        <div class="alert__danger">
+                            {{ session('error') }}
+                        </div>
+                        @endif
+                    </div>
                     @endforeach
                     @endif
                 </div>
@@ -138,5 +147,6 @@
             </div>
         </div> 
     </main>
+    @livewireScripts
 </body>
 </html>
