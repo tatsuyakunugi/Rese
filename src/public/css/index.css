@@ -127,3 +127,21 @@ body {
     font-size: 12px;
     text-decoration: none;
 }
+
+.like-button {
+    background-color: #fff;
+    color: gray;
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.unlike-button {
+    background-color: #fff;
+    color: red;
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
