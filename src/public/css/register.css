@@ -66,6 +66,7 @@ body {
 .form__group-title {
     width: 30%;
     color: #aaa;
+    text-align: left;
 }
 
 .form__input--text input {
