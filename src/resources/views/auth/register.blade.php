@@ -7,11 +7,12 @@
     <title>Rese</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/register.css') }}" />
+    <link href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="header__inner">
-            <a class="header__logo" href="/menu">Rese</a>
+            <a class="header__logo" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i>Rese</a>
         </div>
     </header>
     <main class="main">
@@ -25,6 +26,7 @@
                     <div class="register-form__items">
                         <div class="form__group">
                             <div class="form__group-title">
+                                <i class="fa-solid fa-user"></i>
                                 <span class="form__label--item">Username</span>
                             </div>
                             <div class="form__group-content">
@@ -42,6 +44,7 @@
                         @enderror
                         <div class="form__group">
                             <div class="form__group-title">
+                                <i class="fa-solid fa-envelope"></i>
                                 <span class="form__label--item">Email</span>
                             </div>
                             <div class="form__group-content">
@@ -59,6 +62,7 @@
                         @enderror
                         <div class="form__group">
                             <div class="form__group-title">
+                                <i class="fa-solid fa-lock"></i>
                                 <span class="form__label--item">Password</span>
                             </div>
                             <div class="form__group-content">
