@@ -35,7 +35,7 @@ Route::get('/thanks', [RegisterController::class, 'thanks']);
 
 Route::get('/login', [LoginController::class, 'getLogin']);
 Route::post('/login', [LoginController::class, 'postLogin']);
-Route::get('/logout', [LoginController::class, 'getLogout']);
+Route::post('/logout', [LoginController::class, 'postLogout']);
 
 Route::middleware('auth')->group(function () {
     Route::post('/like/{shop}', [LikeController::class, 'store'])->name('likes.store');

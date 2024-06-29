@@ -7,11 +7,12 @@
     <title>Rese</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/thanks.css') }}" />
+    <link href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="header__inner">
-            <a class="header__logo" href="/menu">Rese</a>
+            <a class="header__logo" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i>Rese</a>
         </div>
     </header>
     <main class="main">

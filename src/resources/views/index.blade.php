@@ -7,12 +7,13 @@
     <title>Rese</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+    <link href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="header__inner">
             <div class="header__item">
-                <a class="header__logo" href="/menu">Rese</a>
+                <a class="header__logo" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i>Rese</a>
             </div>
             <div class="header__item">
                 <form class="search-form" action="{{ route('shop.index') }}" method="get">
@@ -34,7 +35,9 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input class="search-form__button-submit" type="submit" name="submit" value="検索">
+                        <button class="search-form__button-submit" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
                     </div>
                     <div class="form-group">
                         <input class="keyword-select" type="text" name="keyword" value="{{ $keyword }}" placeholder="Search...">
@@ -66,13 +69,17 @@
                                 @if(!Auth::user()->is_like($shop->id))
                                 <form class="like-form" action="{{ route('likes.store', $shop) }}" method="post">
                                     @csrf
-                                    <button class="like-button" type="submit">お気に入り登録</button>
+                                    <button class="like-button" type="submit">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </button>
                                 </form>
                                 @else
                                 <form class="unlike-form" action="{{ route('likes.destroy', $shop) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="unlike-button" type="submit">お気に入り解除</button>
+                                    <button class="unlike-button" type="submit">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </button>
                                 </form>
                                 @endif
                             </div>

@@ -25,7 +25,7 @@
                     </li>
                     @if(Auth::check())
                     <li class="menu-nav__item">
-                        <form class="logout-form" action="/logout" method="get">
+                        <form class="logout-form" action="/logout" method="post">
                             @csrf
                             <button class="logout-form__button">Logout</button>
                         </form>

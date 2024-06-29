@@ -7,12 +7,13 @@
     <title>Rese</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/mypage.css') }}" />
+    <link href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" rel="stylesheet">
     @livewireStyles
 </head>
 <body>
     <header class="header">
         <div class="header__inner">
-            <a class="header__logo" href="/menu">Rese</a>
+            <a class="header__logo" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i>Rese</a>
         </div>
     </header>
     <main class="main">
@@ -41,14 +42,18 @@
                                 </div>
                                 <div class="reservation__card--header-item">
                                     <div class="edit__link">
-                                        <a class="edit__link--button" href="{{ route('reservations.edit', $reservation->id) }}">予約変更</a>
+                                        <a class="edit__link--button" href="{{ route('reservations.edit', $reservation->id) }}">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
                                     </div>
                                     <div class="form">
                                         <form class="delete-form" action="{{ route('reservations.destroy') }}" method="post">
                                             @method('DELETE')
                                             @csrf
                                             <input type="hidden" name="reservation_id" value="{{ $reservation->id }}">
-                                            <button class="delete-form__button-submit">取消</button>
+                                            <button class="delete-form__button" type="submit">
+                                                <i class="fa-regular fa-circle-xmark"></i>
+                                            </button>
                                         </form>
                                     </div>
                                 </div>
@@ -127,13 +132,17 @@
                                         @if(!Auth::user()->is_like($shop->id))
                                         <form class="like-form" action="{{ route('likes.store', $shop) }}" method="post">
                                             @csrf
-                                            <button class="like-button" type="submit">お気に入り登録</button>
+                                            <button class="like-button" type="submit">
+                                                <i class="fa-regular fa-heart"></i>
+                                            </button>
                                         </form>
                                         @else
                                         <form class="unlike-form" action="{{ route('likes.destroy', $shop) }}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="unlike-button" type="submit">お気に入り解除</button>
+                                            <button class="unlike-button" type="submit">
+                                                <i class="fa-solid fa-heart"></i>
+                                            </button>
                                         </form>
                                         @endif
                                     </div>
