@@ -12,9 +12,8 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <div class="header-item">
-                <a class="header__logo" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i>Rese</a>
-            </div>
+            <a class="header__icon" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i></a>
+            <h2 class="header__logo">Rese</h2>
         </div>
     </header>
     <main class="main">
