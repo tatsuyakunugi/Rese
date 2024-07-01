@@ -1,13 +1,12 @@
 .header {
     max-width: 1230px;
     height: 100px;
+    margin: 0 auto;
+    padding: 20px 15px;
 }
 
 .header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
     width: 100%;
-    height: 100%;
 }
 
 .return__link {
