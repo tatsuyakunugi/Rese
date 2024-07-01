@@ -13,7 +13,8 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <a class="header__logo" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i>Rese</a>
+            <a class="header__icon" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i></a>
+            <h2 class="header__logo">Rese</h2>
         </div>
     </header>
     <main class="main">
@@ -36,6 +37,9 @@
                         <div class="reservation__card--inner">
                             <div class="reservation__card--header">
                                 <div class="reservation__card--header-item">
+                                    <div class="reservation__icon">
+                                        <i class="fa-regular fa-clock"></i>
+                                    </div>
                                     <div class="reservation">
                                         <p>予約</p>
                                     </div>
@@ -93,6 +97,16 @@
                         </div>
                     </div>
                     <livewire:review :reservation="$reservation">
+                    <div class="form__error">
+                        @error('rating')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                    <div class="form__error">
+                        @error('comment')
+                        {{ $message }}
+                        @enderror
+                    </div>
                     <div class="alert">
                         @if(session('error'))
                         <div class="alert__danger">
