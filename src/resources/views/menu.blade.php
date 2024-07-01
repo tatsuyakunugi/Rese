@@ -7,12 +7,13 @@
     <title>Rese</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/menu.css') }}" />
+    <link href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="header__inner">
             <div class="link">
-                <a class="return__link" href="/">✕</a>
+                <a class="return__link" href="/"><i class="fa-solid fa-xmark"></i></a>
             </div>
         </div>
     </header>
