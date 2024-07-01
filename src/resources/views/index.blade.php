@@ -13,7 +13,8 @@
     <header class="header">
         <div class="header__inner">
             <div class="header__item">
-                <a class="header__logo" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i>Rese</a>
+                <a class="header__icon" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i></a>
+                <h2 class="header__logo">Rese</h2>
             </div>
             <div class="header__item">
                 <form class="search-form" action="{{ route('shop.index') }}" method="get">
