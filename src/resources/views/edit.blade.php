@@ -13,7 +13,8 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <a class="header__logo" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i>Rese</a>
+            <a class="header__icon" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i></a>
+            <h2 class="header__logo">Rese</h2>
         </div>
     </header>
     <main class="main">
@@ -21,7 +22,7 @@
             <div class="shop-detail">
                 <div class="shop-detail__header">
                     <div class="link">
-                        <a class="link__button" href="/mypage"><</a>
+                        <a class="link__button" href="/mypage"><i class="fa-solid fa-less-than"></i></a>
                     </div>
                     <div class="reservation__status">
                         <p>現在のご予約状況</p>
