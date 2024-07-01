@@ -12,7 +12,8 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <a class="header__logo" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i>Rese</a>
+            <a class="header__icon" href="/menu"><i class="fa-solid fa-square-poll-horizontal"></i></a>
+            <h2 class="header__logo">Rese</h2>
         </div>
     </header>
     <main class="main">
@@ -25,13 +26,17 @@
                     </div>
                     <div class="register-form__items">
                         <div class="form__group">
-                            <div class="form__group-title">
+                            <div class="form__group-icon">
                                 <i class="fa-solid fa-user"></i>
-                                <span class="form__label--item">Username</span>
                             </div>
-                            <div class="form__group-content">
-                                <div class="form__input--text">
-                                    <input type="text" name="name">
+                            <div class="form__group-item">
+                                <div class="form__group-title">
+                                    <span class="form__label--item">Username</span>
+                                </div>
+                                <div class="form__group-content">
+                                    <div class="form__input--text">
+                                        <input type="text" name="name">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -43,13 +48,17 @@
                         </div>
                         @enderror
                         <div class="form__group">
-                            <div class="form__group-title">
+                            <div class="form__group-icon">
                                 <i class="fa-solid fa-envelope"></i>
-                                <span class="form__label--item">Email</span>
                             </div>
-                            <div class="form__group-content">
-                                <div class="form__input--text">
-                                    <input type="email" name="email">
+                            <div class="form__group-item">
+                                <div class="form__group-title">
+                                    <span class="form__label--item">Email</span>
+                                </div>
+                                <div class="form__group-content">
+                                    <div class="form__input--text">
+                                        <input type="email" name="email">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -61,13 +70,17 @@
                         </div>
                         @enderror
                         <div class="form__group">
-                            <div class="form__group-title">
+                            <div class="form__group-icon">
                                 <i class="fa-solid fa-lock"></i>
-                                <span class="form__label--item">Password</span>
                             </div>
-                            <div class="form__group-content">
-                                <div class="form__input--text">
-                                    <input type="password" name="password">
+                            <div class="form__group-item">
+                                <div class="form__group-title">
+                                    <span class="form__label--item">Password</span>
+                                </div>
+                                <div class="form__group-content">
+                                    <div class="form__input--text">
+                                        <input type="password" name="password">
+                                    </div>
                                 </div>
                             </div>
                         </div>

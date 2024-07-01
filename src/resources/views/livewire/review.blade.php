@@ -38,20 +38,10 @@
                                 <input id="star1" type="radio" name="rating" value="1">
                                 <label for="star1">★1</label>
                             </div>
-                            <div class="form__error">
-                                @error('rating')
-                                {{ $message }}
-                                @enderror
-                            </div>
                         </div>
                         <div class="form__group">
                             <div class="input__comment">
                                 <textarea name="comment"></textarea>
-                            </div>
-                            <div class="form__error">
-                                @error('comment')
-                                {{ $message }}
-                                @enderror
                             </div>
                         </div>
                         <div class="review-form__button">

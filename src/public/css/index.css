@@ -16,9 +16,21 @@ body {
     justify-content: space-between;
 }
 
+.header__item {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.header__icon {
+    margin-right: 20px;
+}
+
+.header__icon,
 .header__logo {
     font-weight: bold;
     font-size: 32px;
+    color: #0000ff;
     text-decoration: none;
 }
 
@@ -131,6 +143,7 @@ body {
 .like-button {
     background-color: #fff;
     color: gray;
+    font-size: 18px;
     border: none;
     outline: none;
     appearance: none;
@@ -140,6 +153,7 @@ body {
 .unlike-button {
     background-color: #fff;
     color: red;
+    font-size: 18px;
     border: none;
     outline: none;
     appearance: none;

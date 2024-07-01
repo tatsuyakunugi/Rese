@@ -11,11 +11,20 @@ body {
 
 .header__inner {
     width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
+.header__icon {
+    margin-right: 20px;
+}
+
+.header__icon,
 .header__logo {
     font-weight: bold;
     font-size: 32px;
+    color: #0000ff;
     text-decoration: none;
 }
 
@@ -42,12 +51,12 @@ body {
 }
 
 .reservation__info {
-    width: 45%;
+    width: 40%;
     padding: 10px;
 }
 
 .reservation__info--title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -72,12 +81,17 @@ body {
     justify-content: space-between;
 }
 
+.reservation__icon {
+    margin-right: 10px;
+}
+
 .edit__link {
     margin-right: 20px;
 }
 
 .edit__link--button {
     color: #fff;
+    font-size: 18px;
     text-decoration: none;
     cursor: pointer;
 }
@@ -85,6 +99,7 @@ body {
 .delete-form__button {
     background-color: #0000ff;
     color: #fff;
+    font-size: 18px;
     border: none;
     outline: none;
     appearance: none;
@@ -174,10 +189,11 @@ body {
 
 .select__rating label {
     position: relative;
+    margin-bottom: 10px;
     padding: 0 5px;
     color: #ccc;
     cursor: pointer;
-    font-size: 35px;
+    font-size: 24px;
 }
 
 .select__rating label:hover {
@@ -208,13 +224,19 @@ body {
     cursor: pointer;
 }
 
+.form__error {
+    margin-bottom: 10px;
+    color: red;
+    font-size: 14px;
+}
+
 .likes__info {
-    width: 45%;
+    width: 60%;
     padding: 10px;
 }
 
 .likes__info--title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -225,8 +247,8 @@ body {
 }
 
 .shop-card {
-    width: 40%;
-    margin: 20px auto 0;
+    width: 45%;
+    margin: 0 auto;
     margin-right: 10px;
     background-color: #fff;
     border: 1px solid #808080;
@@ -293,6 +315,7 @@ body {
 .like-button {
     background-color: #fff;
     color : gray;
+    font-size: 18px;
     border: none;
     outline: none;
     appearance: none;
@@ -302,6 +325,7 @@ body {
 .unlike-button {
     background-color: #fff;
     color: red;
+    font-size: 18px;
     border: none;
     outline: none;
     appearance: none;
