@@ -12,7 +12,8 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.12",
-        "nesbot/carbon": "^2.31"
+        "nesbot/carbon": "^2.31",
+        "simplesoftwareio/simple-qrcode": "^0.0.4@beta"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
