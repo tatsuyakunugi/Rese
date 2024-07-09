@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -21,6 +22,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'email_verified_at',
+        'email_verified',
+        'email_verify_token',
     ];
 
     /**
@@ -42,15 +46,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function verified()
+    {
+        $this->email_verified_at = Carbon::now();
+        $this->email_verified = 1;
+        $this->save();
+    }
+
     public function likes()
     {
         return $this->hasMany(Like::class);
     }
 
     //多対多のリレーション
-    //1人のユーザーは複数のお店をお気に入り登録する。
-    //1つの店舗は複数のユーザーからお気に入り登録される。
-    //「お気に入り」というリソースを通じてユーザーとお店は多対多の関係である、と定義。
     public function like_shops()
     {
         return $this->belongsToMany(Shop::class, 'likes', 'user_id', 'shop_id');
