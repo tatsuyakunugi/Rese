@@ -20,10 +20,12 @@
         <div class="thanks__content">
             <div class="thanks-card">
                 <div class="thanks-card__content">
-                    <div class="thanks-card__ttl">
-                        <p class="thanks-card__message">
-                            ご予約ありがとうございます
-                        </p>
+                    <div class="thanks-card__body">
+                        @isset($message)
+                        <div class="thanks-card__message">
+                            {{$message}}
+                        </div>
+                        @endisset
                     </div>
                     <div class="link">
                         <a class="login__link" href="/login">ログインする</a>
