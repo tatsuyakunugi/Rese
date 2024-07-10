@@ -21,14 +21,18 @@
             <div class="thanks-card">
                 <div class="thanks-card__content">
                     <div class="thanks-card__body">
-                        @isset($message)
-                        <div class="thanks-card__message">
-                            {{$message}}
+                        @if(Session::has('error'))
+                        <div class="thanks-card__error">
+                            <p>{{ session('error') }}</p>
                         </div>
-                        @endisset
-                    </div>
-                    <div class="link">
-                        <a class="login__link" href="/login">ログインする</a>
+                        @else(Session::has('message'))
+                        <div class="thanks-card__sucsess">
+                            <p>{{ session('message') }}</p>
+                        </div>
+                        <div class="link">
+                            <a class="login__link" href="/login">ログインする</a>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
