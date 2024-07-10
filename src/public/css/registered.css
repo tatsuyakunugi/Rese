@@ -28,9 +28,13 @@
     max-width: 1230px;
 }
 
-.registered-card {
-    width: 400px;
+.registered__content {
     margin: 100px auto 0;
+    width: 50%;
+}
+
+.registered-card {
+    width: 100%;
     padding: 20px 30px;
     border: 1px solid #808080;
     border-radius: 3px;
