@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\RegisterRequest;
 use Carbon\Carbon;
 
@@ -58,12 +59,15 @@ class RegisterController extends Controller
 
         if(!$user)
         {
-            return view('thanks')->with('message', '無効なトークンです。');
+            Session::put('error', '無効なトークンです');
+            return view('thanks');
         }elseif($user->email_verified){
-            return view('thanks')->with('message', 'すでに本登録されています。ログインして利用してください。');
+            Session::put('message', 'すでに本登録されています。ログインして利用してください。');
+            return view('thanks');
         }else{
             $user->verified();
-            return view('thanks')->with('message', 'ご登録ありがとうございました。ログインして利用してください。');
+            Session::put('message', 'ご登録ありがとうございました。ログインして利用してください。');
+            return view('thanks');
         }   
     }
 
