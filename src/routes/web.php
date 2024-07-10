@@ -31,7 +31,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/register', [RegisterController::class, 'getRegister']);
 Route::post('/register', [RegisterController::class, 'postRegister']);
-Route::get('/thanks', [RegisterController::class, 'thanks']);
+Route::get('register/verify/{token}', [RegisterController::class, 'verify']);
+Route::get('/thanks/{token}', [RegisterController::class, 'thanks']);
 
 Route::get('/login', [LoginController::class, 'getLogin']);
 Route::post('/login', [LoginController::class, 'postLogin']);
