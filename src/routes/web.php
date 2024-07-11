@@ -52,7 +52,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('/review', [ReviewController::class, 'store'])->name('reviews.store');
 });
-Route::get('/list/{shop_id}', [ReviewController::class, 'list']);
+Route::get('/review_list/{shop_id}', [ReviewController::class, 'showList']);
 
 Route::get('/create', [ShopUploadController::class, 'create'])->name('create');
 Route::post('/shop_upload', [ShopUploadController::class, 'store'])->name('shop_upload');
