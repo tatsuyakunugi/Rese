@@ -33,7 +33,7 @@ class ReviewController extends Controller
 
         if(Review::where('user_id', $user->id)->where('shop_id', $shop->id)->exists())
         {
-            return back()->with('error', 'すでにこのお店のレビューは投稿しています');
+            return back()->with('error', '※すでにこのお店のレビューは投稿しています');
         }
 
         if($reservationDateTime->isPast())
@@ -51,11 +51,11 @@ class ReviewController extends Controller
             Session::put('message', 'ご協力ありがとうございました。');
             return view('review');
         }else{
-            return back()->with('error', 'レビュー投稿は予約日時以降から可能となります。');
+            return back()->with('error', '※レビュー投稿は予約日時以降から可能となります。');
         }
     }
 
-    public function list($id)
+    public function showList($id)
     {
         $reviews = '';
 
@@ -64,6 +64,6 @@ class ReviewController extends Controller
             $reviews = Review::where('shop_id', $id)->get();
         }
 
-        return view('list', compact('reviews'));
+        return view('review_list', compact('reviews'));
     }
 }
