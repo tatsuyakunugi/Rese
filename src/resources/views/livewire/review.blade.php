@@ -14,7 +14,7 @@
                     </button>
                 </div>
                 <div class="review__content--heading">
-                    <div class="message">
+                    <div class="review-card__message">
                         <p>この度はご来店ありがとうございました。</p> 
                         <p>よろしければアンケートにご協力ください。</p>
                     </div>
