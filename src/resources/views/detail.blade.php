@@ -41,7 +41,7 @@
                     <p>{{ $shop->content }}</p>
                 </div>
                 <div class="review__link-form">
-                    <a class="review__link" href="/list/{{ $shop->id }}">このお店のレビューをを見る</a>
+                    <a class="review__link" href="/review_list/{{ $shop->id }}">このお店のレビューをを見る</a>
                 </div>
             </div>
             <livewire:reservation :shop="$shop">
