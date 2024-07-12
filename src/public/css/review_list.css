@@ -1,0 +1,76 @@
+.list__content--heading {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.message,
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.list__content {
+    width: 100%;
+}
+
+.list__content--inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop-card {
+    border: 1px solid #808080;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+.shop-name {
+    margin-left: 20px;
+}
+
+.shop__img img {
+    width: 100%;
+}
+
+.review-card {
+    padding: 10px 20px;
+    border: 1px solid #808080;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+.review-card__item {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card__tag {
+    width: 30%;
+}
+
+.home__link {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.home__link--button {
+    padding: 5px 10px;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: #0000ff;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
