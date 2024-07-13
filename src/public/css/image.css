@@ -1,0 +1,46 @@
+.image__content {
+    width: 100%;
+}
+
+.image-form {
+    width: 40%;
+    margin: 30px auto;
+    padding: 20px 30px;
+    text-align: left;
+    background-color: #fff;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.3);  
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.input_label {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.form__button {
+    text-align: center;
+}
+
+.form__button-submit {
+    padding: 10px 20px;
+    background-color: #0000ff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.image__alert {
+    text-align: center;
+}
+
+.image__alert--success {
+    font-size: 18px;
+    color: #0000ff;
+}
