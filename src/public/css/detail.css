@@ -3,10 +3,23 @@
     justify-content: space-between;
 }
 
+@media screen and (max-width: 480px) {
+    .detail__content {
+        display: block;
+        justify-content: center;
+    }
+}
+
 .shop-detail {
     width: 45%;
     margin-bottom: 20px;
 }
+
+@media screen and (max-width: 480px) {
+    .shop-detail {
+      width: 100%;
+    }
+  }
 
 .shop-detail__header
 {
@@ -74,6 +87,12 @@
     width: 45%;
     margin-bottom: 20px;
 }
+
+@media screen and (max-width: 480px) {
+    .reservation-detail {
+      width: 100%;
+    }
+  }
 
 .reservation-card {
     width: 100%;
