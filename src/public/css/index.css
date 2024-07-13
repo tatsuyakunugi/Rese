@@ -16,6 +16,12 @@ body {
     justify-content: space-between;
 }
 
+@media screen and (max-width: 480px) {
+    .header__inner {
+        display: block;
+    }
+}
+
 .header__item {
     display: flex;
     justify-content: left;
@@ -34,6 +40,20 @@ body {
     text-decoration: none;
 }
 
+@media screen and (max-width: 768px) {
+    .header__icon,
+    .header__logo {
+      font-size: 28px;
+    }
+}
+  
+@media screen and (max-width: 480px) {
+    .header__icon,
+    .header__logo {
+      font-size: 24px;
+    }
+}
+
 .search-form {
     display: flex;
     align-items: center;
@@ -48,14 +68,24 @@ body {
     font-weight: bold;
 }
 
+@media screen and (max-width: 480px) {
+    .area-select,
+    .genre-select,
+    .keyword-select {
+      width: 100%;
+    }
+}
+
 .area-select {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .genre-select {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .search-form__button-submit {
@@ -63,13 +93,21 @@ body {
     height: 27px;
     background-color: #fff;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
+
+@media screen and (max-width: 480px) {
+    .search-form__button-submit {
+      height: 26px;
+    }
+  }
 
 .keyword-select {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-    box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.3);
     outline: none;
+    cursor: pointer;
 }
 
 .main {
@@ -80,18 +118,37 @@ body {
 
 .shop__wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
+}
+
+@media screen and (max-width: 480px) {
+    .shop__wrapper {
+        display: block;
+        justify-content: center;
+    }
 }
 
 .shop-card {
     width: 20%;
-    margin: 20px auto 0;
+    margin: 20px auto;
     margin-right: 10px;
     background-color: #fff;
     border: 1px solid #808080;
     border-radius: 3px;
     box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+    .shop-card {
+      width: 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .shop-card {
+      width: 90%;
+    }
 }
 
 .shop-card__img img {
