@@ -68,13 +68,13 @@
     .form__group-title {
       width: 35%;
     }
-  }
+}
   
-  @media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .form__group-title {
         width: 40%;
     }
-  }
+}
 
 .form__input--text input {
     padding: 10px;

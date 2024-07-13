@@ -7,8 +7,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ReservationController;
-use App\Http\Controllers\ShopUploadController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\ShopUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,9 +51,13 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::post('/review', [ReviewController::class, 'store'])->name('reviews.store');
+    Route::get('/review/{reservation_id}', [ReviewController::class, 'review']);
+    Route::post('/completion', [ReviewController::class, 'store'])->name('reviews.store');
 });
 Route::get('/review_list/{shop_id}', [ReviewController::class, 'showList']);
+
+Route::get('/image', [ImageUploadController::class, 'image']);
+Route::post('/image_upload', [ImageUploadController::class, 'store'])->name('image_upload');
 
 Route::get('/create', [ShopUploadController::class, 'create'])->name('create');
 Route::post('/shop_upload', [ShopUploadController::class, 'store'])->name('shop_upload');

@@ -47,4 +47,12 @@ class Reservation extends Model
 
         return $reservation_time;
     }
+
+    public function getDateInfoAttribute()
+    {
+        $reservation_datetime = Carbon::parse($this->reservation_datetime);
+        $date_info = $reservation_datetime->format('Y-m-d H:i');
+
+        return $date_info;
+    }
 }

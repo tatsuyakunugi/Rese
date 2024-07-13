@@ -80,24 +80,9 @@
                         </div>
                     </div>
                 </div>
-                <livewire:review :reservation="$reservation">
-                <div class="form__error">
-                    @error('rating')
-                    {{ $message }}
-                    @enderror
+                <div class="reviwe__link">
+                    <a class="review__link-button" href="/review/{{ $reservation->id }}">レビューを投稿する</a>
                 </div>
-                <div class="form__error">
-                    @error('comment')
-                    {{ $message }}
-                    @enderror
-                </div>
-                <div class="alert">
-                @if(session('error'))
-                <div class="alert__danger">
-                    {{ session('error') }}
-                </div>
-                @endif
-            </div>
             </div>
             @endforeach
             @endif
