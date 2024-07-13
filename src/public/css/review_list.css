@@ -18,6 +18,13 @@
     justify-content: space-between;
 }
 
+@media screen and (max-width: 480px) {
+    .list__content--inner {
+        display: block;
+        justify-content: center;
+    }
+}
+
 .shop-card {
     border: 1px solid #808080;
     border-radius: 3px;
@@ -25,6 +32,12 @@
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
     width: 45%;
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .shop-card {
+      width: 100%;
+    }
 }
 
 .shop-name {
@@ -43,6 +56,12 @@
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
     width: 45%;
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .review-card {
+      width: 100%;
+    }
 }
 
 .review-card__item {

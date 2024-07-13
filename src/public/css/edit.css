@@ -3,6 +3,13 @@
     justify-content: space-between;
 }
 
+@media screen and (max-width: 480px) {
+    .edit__content {
+        display: block;
+        justify-content: center;
+    }
+}
+
 .reservation__status {
     font-size: 16px;
     font-weight: bold;
@@ -12,6 +19,12 @@
 .shop-detail {
     width: 45%;
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .shop-detail {
+    width: 100%;
+  }
 }
 
 .shop-detail__header
@@ -52,6 +65,18 @@
     margin: 0px 20px;
 }
 
+@media screen and (max-width: 786px) {
+    .reservation__status-tag {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .reservation__status-tag {
+        width: 35%;
+    }
+}
+
 .reservation__status-tag,
 .shop-name,
 .reservation-date,
@@ -64,6 +89,12 @@
 .reservation-edit {
     width: 45%;
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .reservation-edit {
+      width: 100%;
+    }
 }
 
 .reservation-edit__card {
