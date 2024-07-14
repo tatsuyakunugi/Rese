@@ -91,6 +91,24 @@
 
 7．php artisan db:seed
 
-8．
+8．php artisan storage:link
 
 9．
+
+## その他
+
+### テスト用ユーザー
+
+名前：テスト太郎
+
+メールアドレス：test@example.com
+
+パスワード：testpass
+
+### 機能検証用データ
+
+機能確認用のデータとして、
+
+・
+ 
+・
