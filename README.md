@@ -68,7 +68,7 @@
 
 ## テーブル設計
 
-![image](https://github.com/user-attachments/assets/05284830-c7e5-4604-8171-bb090511bef1)
+![image](https://github.com/user-attachments/assets/5aaff976-78e2-40f2-85dc-ec62f45537b3)
 ![image](https://github.com/user-attachments/assets/f58c72e5-1689-4e85-9b04-42f01b7423b6)
 ![image](https://github.com/user-attachments/assets/4d0a3eaf-acd8-4735-93d0-a1e06f643c0d)
 ![image](https://github.com/user-attachments/assets/d5f6160a-97ae-418f-a4f5-0131ae7810f1)
