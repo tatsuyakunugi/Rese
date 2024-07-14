@@ -22,7 +22,7 @@
 
 追加実装項目についてはコーチとの面談時にアイデアを出し、
 
-実装しました。
+アドバイスを参考に実装しました。
 
 ## アプリケーションURL
 
@@ -110,6 +110,8 @@
 9．composer require livewire/livewire
 
 10. docker-compose.ymlにメールサーバコンテナの記述を追記し、docker-compose build、docker-compose up -d
+    
+11. php artisan email:reminder
 
 ## その他
 
@@ -125,6 +127,9 @@
 
 機能確認用のデータとして、
 
-・
+・予約情報を1件
  
-・
+・お気に入り店舗を2件
+
+登録してあります。
+
