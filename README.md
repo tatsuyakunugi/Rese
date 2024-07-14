@@ -1,5 +1,7 @@
 # Rese
 
+![image](https://github.com/user-attachments/assets/7600d790-b062-4f06-93d6-8cb5c3cdda72)
+
 このアプリは飲食店予約サービスアプリになります。
 
 会員登録をすることで飲食店の予約をすることが出来、
