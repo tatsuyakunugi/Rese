@@ -64,3 +64,13 @@
 ・laravel 8.83.8
 
 ・MYSQL:8.0.26
+
+## テーブル設計
+
+## ER図
+
+### Dockerビルド
+
+1．git clone git@github.com:coachtech-material/laravel-docker-template.git
+
+2．docker-compose up -d --build
