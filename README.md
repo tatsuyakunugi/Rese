@@ -74,3 +74,23 @@
 1．git clone git@github.com:coachtech-material/laravel-docker-template.git
 
 2．docker-compose up -d --build
+
+### laravel環境構築
+
+1．docker-compose exec php bash
+
+2．composer install
+
+3．cp .env.example .env（.env.exampleファイルから.envを作成し、環境変数を変更）
+
+4．php artisan key:generate
+
+5．(composer.jsonの"require"内に"laravel/tinker": "^2.5",と"nesbot/carbon": "^2.31"を追記し)composer update
+
+6．php artisan migrate
+
+7．php artisan db:seed
+
+8．
+
+9．
