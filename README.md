@@ -55,7 +55,8 @@
 ・予約情報のリマインドメール機能
 
 ### 機能に関する注釈
-・メールはmailhogで確認できます。
+
+・メールはmailhogで確認できます。(http://localhost:8025へアクセス)
 
 ## 使用技術
 
@@ -94,6 +95,8 @@
 8．php artisan storage:link
 
 9．composer require livewire/livewire
+
+10. docker-compose.ymlにメールサーバコンテナの記述を追記し、docker-compose build、docker-compose up -d
 
 ## その他
 
