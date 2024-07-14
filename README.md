@@ -78,7 +78,8 @@
 
 ## ER図
 
-![image](https://github.com/user-attachments/assets/bd880aae-fb73-41d5-8a1d-61f7032e77d7)
+![image](https://github.com/user-attachments/assets/5325b3c8-dc30-4278-89e7-463bb7f86cb6)
+
 
 ### Dockerビルド
 
