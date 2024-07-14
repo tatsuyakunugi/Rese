@@ -93,7 +93,7 @@
 
 8．php artisan storage:link
 
-9．
+9．composer require livewire/livewire
 
 ## その他
 
