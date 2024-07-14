@@ -68,6 +68,14 @@
 
 ## テーブル設計
 
+![image](https://github.com/user-attachments/assets/a5e51ad2-b046-45e3-97ca-2e2008a69028)
+![image](https://github.com/user-attachments/assets/f58c72e5-1689-4e85-9b04-42f01b7423b6)
+![image](https://github.com/user-attachments/assets/4d0a3eaf-acd8-4735-93d0-a1e06f643c0d)
+![image](https://github.com/user-attachments/assets/d5f6160a-97ae-418f-a4f5-0131ae7810f1)
+![image](https://github.com/user-attachments/assets/f8c51288-75ec-4624-8898-fa57b57d95c9)
+![image](https://github.com/user-attachments/assets/659642e4-8e5b-4afe-9641-7cb758276778)
+![image](https://github.com/user-attachments/assets/f2bb1a86-67e5-4e11-a509-1e77b68e5039)
+
 ## ER図
 
 ### Dockerビルド
