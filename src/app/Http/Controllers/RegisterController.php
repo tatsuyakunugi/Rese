@@ -55,24 +55,31 @@ class RegisterController extends Controller
 
     public function verify($email_token)
     {
-        $user = User::where('email_verify_token', $email_token)->first();
+        $user = '';
+        
+        if(User::where('email_verify_token', $email_token)->exists())
+        {
+            $user = User::where('email_verify_token', $email_token)->first();
+            $dt_now = new Carbon();
+            $dt_create = new Carbon($user->created_at);
+            $dt_limit = $dt_create->addHour();
+        }
 
         if(!$user)
         {
-            Session::put('error', '無効なトークンです');
+            Session::put('verify_error', '無効なトークンです');
+            return view('thanks');
+        }elseif($dt_now->gt($dt_limit)){
+            Session::put('verify_error', 'メール認証の発行から一時間以上経過しています。新規アカウントを作成してください。');
             return view('thanks');
         }elseif($user->email_verified){
-            Session::put('message', 'すでに本登録されています。ログインして利用してください。');
+            Session::put('verify_message', 'すでに本登録されています。ログインして利用してください。');
             return view('thanks');
         }else{
             $user->verified();
-            Session::put('message', 'ご登録ありがとうございました。ログインして利用してください。');
+            Session::put('verify_message', 'ご登録ありがとうございました。ログインして利用してください。');
             return view('thanks');
-        }   
-    }
-
-    public function thanks()
-    {
-        return view('thanks');
+        }
+           
     }
 }
