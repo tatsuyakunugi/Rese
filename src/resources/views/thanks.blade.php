@@ -7,13 +7,13 @@
     <div class="thanks-card">
         <div class="thanks-card__content">
             <div class="thanks-card__body">
-                @if(Session::has('error'))
+                @if(Session::has('verify_error'))
                 <div class="thanks-card__error">
-                    <p>{{ session('error') }}</p>
+                    <p>{{ session('verify_error') }}</p>
                 </div>
-                @else(Session::has('message'))
+                @else(Session::has('verify_message'))
                 <div class="thanks-card__sucsess">
-                    <p>{{ session('message') }}</p>
+                    <p>{{ session('verify_message') }}</p>
                 </div>
                 <div class="link">
                     <a class="login__link" href="/login">ログインする</a>

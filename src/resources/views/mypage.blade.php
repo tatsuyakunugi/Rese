@@ -17,6 +17,11 @@
                 <p>予約はありません</p>
             </div>
             @else
+            <div class="alert">
+                @if(session('isPast'))
+                {{ session('isPast') }}
+                @endif
+            </div>
             @foreach($reservations as $reservation)
             <div class="reservation__card">
                 <div class="reservation__card--inner">

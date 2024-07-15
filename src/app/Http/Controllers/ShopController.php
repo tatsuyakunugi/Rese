@@ -42,13 +42,7 @@ class ShopController extends Controller
 
         if(!empty($keyword))
         {
-            $items->where('shop_name', 'like', '%' . $keyword . '%')
-            ->orwhereHas('area', function ($query) use ($keyword) {
-                $query->where('area_name', 'like', '%' . $keyword . '%');
-            })
-            ->orwhereHas('genre', function ($query) use ($keyword) {
-                $query->where('genre_name', 'like', '%' . $keyword . '%');
-            })->get();    
+            $items->where('shop_name', 'like', '%' . $keyword . '%')->get();    
         }
 
         $shops = $items->get();

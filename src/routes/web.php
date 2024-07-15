@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/register', [RegisterController::class, 'getRegister']);
 Route::post('/register', [RegisterController::class, 'postRegister']);
 Route::get('register/verify/{token}', [RegisterController::class, 'verify']);
-Route::get('/thanks/{token}', [RegisterController::class, 'thanks']);
+Route::get('/thanks', [RegisterController::class, 'thanks']);
 
 Route::get('/login', [LoginController::class, 'getLogin']);
 Route::post('/login', [LoginController::class, 'postLogin']);
@@ -60,4 +60,4 @@ Route::get('/image', [ImageUploadController::class, 'image']);
 Route::post('/image_upload', [ImageUploadController::class, 'store'])->name('image_upload');
 
 Route::get('/create', [ShopUploadController::class, 'create'])->name('create');
-Route::post('/shop_upload', [ShopUploadController::class, 'store'])->name('shop_upload');
+Route::post('/image_upload', [ShopUploadController::class, 'store'])->name('shop_upload');

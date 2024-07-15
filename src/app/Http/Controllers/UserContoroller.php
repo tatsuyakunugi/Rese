@@ -32,7 +32,7 @@ class UserContoroller extends Controller
 
         if(Reservation::where('user_id', $user->id)->exists())
         {
-            $reservations = Reservation::where('user_id', $user->id)->get();
+            $reservations = Reservation::where('user_id', $user->id)->orderBy('reservation_datetime', 'desc')->get();
         }
         
         return view('mypage', compact('user', 'shops', 'reservations'));

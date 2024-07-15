@@ -9,6 +9,12 @@
     text-align: center;
 }
 
+.message {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0000ff;
+}
+
 .mypage__inner {
     display: flex;
     justify-content: space-between;
@@ -25,6 +31,12 @@
 .reservation__info {
     width: 40%;
     padding: 10px;
+}
+
+.alert {
+    margin-bottom: 10px;
+    color: #ff0000;
+    font-size: 14px;
 }
 
 @media screen and (max-width: 768px) {

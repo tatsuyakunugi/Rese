@@ -87,11 +87,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="edit-form__button">
-                    <input type="hidden" name="reservation_id" value="{{ $reservation->id }}">
-                    <button class="edit-form__button-submit" type="submit">予約内容を変更する</button>
-                </div>
-            </div>    
+            </div>
+            <div class="edit-form__button">
+                <input type="hidden" name="reservation_id" value="{{ $reservation->id }}">
+                <button class="edit-form__button-submit" type="submit">予約内容を変更する</button>
+            </div>   
         </form>
     </div>
 </div>

@@ -62,15 +62,30 @@ class ReservationController extends Controller
 
     public function destroy(Request $request)
     {
-        Reservation::find($request->reservation_id)->delete();
-        Session::put('message', '予約を取り消しました');
-        return view('done');
+        $now = Carbon::now();
+        $reservation = Reservation::find($request->input('reservation_id'));
+        $reservation_datetime = Carbon::createFromTimeString($reservation->reservation_datetime);
+        if($reservation_datetime->isPast())
+        {
+            return back()->with('isPast', '既にご来店済みです。');
+        }else{
+            Reservation::find($request->reservation_id)->delete();
+            Session::put('message', '予約を取り消しました');
+            return view('done');
+        }
     }
 
     public function edit($id)
     {
+        $now = Carbon::now();
         $reservation = Reservation::find($id);
-        return view('edit', compact('reservation'));
+        $reservation_datetime = Carbon::createFromTimeString($reservation->reservation_datetime);
+        if($reservation_datetime->isPast())
+        {
+            return back()->with('isPast', 'ご来店日時を過ぎている予約は変更できません。');
+        }else{
+            return view('edit', compact('reservation'));
+        }
     }
 
     public function update(ReservationRequest $request)
