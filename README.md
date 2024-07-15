@@ -72,7 +72,9 @@
 
 ・php 8.3.1
 
-・laravel 8.83.8
+・laravel 8.83.27
+
+・nginx:1.21.1
 
 ・MYSQL:8.0.26
 
