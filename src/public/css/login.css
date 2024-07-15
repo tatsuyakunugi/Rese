@@ -45,6 +45,10 @@
     align-items: center;
 }
 
+.form__group:first-of-type {
+    margin-top: 10px;
+}
+
 .form__group-icon {
     font-size: 18px;
     margin-right: 20px;
