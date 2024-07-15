@@ -19,10 +19,10 @@
             </div>
             <div class="reservation__status--group">
                 <div class="reservation__status-tag">
-                    <span>ご利用日時</span>
+                    <span>ご利用日</span>
                 </div>
                 <div class="reservation-date">    
-                    <p>{{ $reservation->date_info}}</p>
+                    <p>{{ $reservation->reservation_date}}</p>
                 </div>
             </div>
         </div>
