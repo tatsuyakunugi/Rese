@@ -54,11 +54,17 @@
 
 ・レビュー投稿機能
 
-・予約情報のリマインドメール機能
+・画像ファイル保存機能(ストレージに保存)
 
 ### 機能に関する注釈
 
 ・メールはmailhogにアクセスすることで確認できます。(http://localhost:8025)
+
+・レビュー投稿は予約日時を超えてから投稿可能。
+
+・新規予約は現在時刻より前を選択することは不可。同じ内容で予約(重複)することは不可。
+
+・予約内容変更、予約削除は来店予定日時を過ぎると変更不可。
 
 ## 使用技術
 
@@ -67,6 +73,8 @@
 ・laravel 8.83.8
 
 ・MYSQL:8.0.26
+
+・mailhog
 
 ## テーブル設計
 
@@ -111,7 +119,7 @@
 
 10. docker-compose.ymlにメールサーバコンテナの記述を追記し、docker-compose build、docker-compose up -d
     
-11. php artisan email:reminder
+11. php.iniにmemory_limit、post_max_size、upload_max_filesize(それぞれ100M)を追記、default.confにclient_max_body_size(100M)を追記し、再起動。
 
 ## その他
 
@@ -131,5 +139,5 @@
  
 ・お気に入り店舗を2件
 
-登録してあります。
+事前に登録してあります。
 
