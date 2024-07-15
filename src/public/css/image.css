@@ -3,7 +3,7 @@
 }
 
 .image-form {
-    width: 40%;
+    width: 45%;
     margin: 30px auto;
     padding: 20px 30px;
     text-align: left;
@@ -13,9 +13,25 @@
     box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.3);  
 }
 
+@media screen and (max-width: 768px) {
+    .image-form {
+        width: 70%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .image-form {
+        width: 90%;
+    }
+}
+
 .form-group {
     margin-bottom: 20px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .input_label {
