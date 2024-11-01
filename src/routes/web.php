@@ -8,6 +8,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\AdminDeleteReviewController;
 use App\Http\Controllers\ImageUploadController;
 //use App\Http\Controllers\ShopUploadController;
 
@@ -55,6 +58,25 @@ Route::middleware('auth')->group(function () {
     Route::post('/completion', [ReviewController::class, 'store'])->name('reviews.store');
 });
 Route::get('/review_list/{shop_id}', [ReviewController::class, 'showList']);
+
+Route::middleware('guest:admin')->group(function () {
+    Route::get('/admin/login', [AdminLoginController::class, 'getAdminLogin'])->name('admin.showLogin');
+    Route::post('/admin/login', [AdminLoginController::class, 'postAdminLogin']);
+});
+
+Route::middleware('auth:admin')->group(function () {
+    Route::post('/admin/logout', [AdminLoginController::class, 'postAdminLogout']);
+});
+
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/admin', [AdminUserController::class, 'show']);
+    Route::get('/admin/user_list', [AdminUserController::class, 'getUserList']);
+});
+
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/admin/review_detail/{user_id}', [AdminDeleteReviewController::class, 'getReviewDetail'])->name('admin.showReviewDetail');
+    Route::delete('/admin/review_detail/{review_id}', [AdminDeleteReviewController::class, 'destroy'])->name('admin.reviewDestroy');
+});
 
 Route::get('/image', [ImageUploadController::class, 'image']);
 Route::post('/image_upload', [ImageUploadController::class, 'store'])->name('image_upload');
