@@ -9,6 +9,7 @@ use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Like;
+use App\Models\Review;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -52,8 +53,17 @@ class ShopController extends Controller
 
     public function detail($id)
     {
+        $user = Auth::user();
         $shop = Shop::find($id);
+        $reviews = '';
+
+        if(Review::where('shop_id', $shop->id)->exists())
+        {
+            $reviews = Review::where('shop_id', $shop->id)->get();
+        }else{
+            $reviews = null;
+        }
         
-        return view('detail', compact('shop'));
+        return view('detail', compact('user', 'shop', 'reviews'));
     }
 }
