@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <div class="reviwe__link">
-                    <a class="review__link-button" href="/review/{{ $reservation->id }}">レビューを投稿する</a>
+                    <a class="review__link-button" href="/review/{{ $reservation->shop->id }}">口コミを投稿する</a>
                 </div>
             </div>
             @endforeach
