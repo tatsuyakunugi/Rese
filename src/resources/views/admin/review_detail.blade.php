@@ -33,7 +33,7 @@
                     <p class="detail-card__tag">店舗名：</p>
                 </div>
                 <div class="detail-card__item">
-                    {{ $review->shop->name }}
+                    {{ $review->shop->shop_name }}
                 </div>
             </div>
             <div class="detail-card__group">
@@ -49,7 +49,7 @@
                     <p class="detail-card__tag">投稿内容：</p>
                 </div>
                 <div class="detail-card__item">
-                    {{ $review->review }}
+                    {{ $review->comment }}
                 </div>
             </div>
             <div class="delete-form__button">

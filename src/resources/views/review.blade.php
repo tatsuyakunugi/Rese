@@ -5,48 +5,42 @@
 @section('content')
 <div class="review__content">
     <div class="review__content--inner">
-        <div class="reservation-info">
-            <div class="shop__img">
-                <img src="{{ Storage::url($reservation->shop->shop_image_path) }}" alt="">
+        <div class="shop-card">
+            <div class="shop-card__img">
+                <img src="{{ Storage::url($shop->shop_image_path) }}" alt="">
             </div>
-            <div class="reservation__status--group">
-                <div class="reservation__status-tag">
-                    <span>ご利用店舗</span>
+            <div class="shop-card__content">
+                <h2 class="shop-name">{{ $shop->shop_name }}</h2>
+                <div class="shop-card__content-tag">
+                    <p class="shop-area">#{{ $shop->area->area_name }}</p>
+                    <p class="shop-genre">#{{ $shop->genre->genre_name }}</p>
                 </div>
-                <div class="shop-name">    
-                    <p>{{ $reservation->shop->shop_name }}</p>
-                </div>
-            </div>
-            <div class="reservation__status--group">
-                <div class="reservation__status-tag">
-                    <span>ご利用日</span>
-                </div>
-                <div class="reservation-date">    
-                    <p>{{ $reservation->reservation_date}}</p>
+                <div class="shop-card__items">
+                    <div class="detail__link-button">
+                        <a class="detail__link" href="/detail/{{ $shop->id }}">詳しく見る</a>
+                    </div>
                 </div>
             </div>
         </div>
+        @if(is_null($review))
         <div class="review-card">
-            <div class="review-card__heading">
-                <div class="comment">
-                    <p>この度はご来店ありがとうございました。</p>
-                    <p>よろしければアンケートにご協力ください。</p>
-                </div>
-            </div>
-            <form class="review-form" action="{{ route('reviews.store') }}" method="post">
+            <form class="review-form" action="{{ route('reviews.store') }}" method="post" enctype="multipart/form-data">
             @csrf
                 <div class="form__group">
+                    <div class="form__group--title">
+                        <p>体験を評価してください</p>
+                    </div>
                     <div class="select__rating">
                         <input id="star5" type="radio" name="rating" value="5">
-                        <label for="star5">★5</label>
+                        <label for="star5">★</label>
                         <input id="star4" type="radio" name="rating" value="4">
-                        <label for="star4">★4</label>
+                        <label for="star4">★</label>
                         <input id="star3" type="radio" name="rating" value="3">
-                        <label for="star3">★3</label>
+                        <label for="star3">★</label>
                         <input id="star2" type="radio" name="rating" value="2">
-                        <label for="star2">★2</label>
+                        <label for="star2">★</label>
                         <input id="star1" type="radio" name="rating" value="1">
-                        <label for="star1">★1</label>
+                        <label for="star1">★</label>
                     </div>
                     <div class="form__error">
                         @error('rating')
@@ -55,6 +49,9 @@
                     </div>
                 </div>
                 <div class="form__group">
+                    <div class="form__group--title">
+                        <p>口コミを投稿</p>
+                    </div>
                     <div class="input__comment">
                         <textarea name="comment"></textarea>
                     </div>
@@ -64,17 +61,88 @@
                         @enderror
                     </div>
                 </div>
-                <div class="review-form__button">
-                    <input type="hidden" name="shop_id" value="{{ $reservation->shop->id }}">
-                    <button class="review-form__button-submit" type="submit">レビューを投稿する</button>
+                <div class="form__group">
+                    <div class="form__group--title">
+                        <p>画像の追加</p>
+                    </div>
+                    <div class="form__input--image">
+                        <label class="image-upload" for="image">クリックして写真を追加、またはドラッグアンドドロップ</label>
+                        <input type="file" name="image" id="image">
+                    </div>
+                    <div class="form__error">
+                        @error('image')
+                        {{ $message }}
+                        @enderror
+                    </div>
                 </div>
-                <div class="alert">
-                    @if(session('error'))
-                    {{ session('error') }}
-                    @endif
+                <div class="review-form__button">
+                    <input type="hidden" name="shop_id" value="{{ $shop->id }}">
+                    <button class="review-form__button-submit" type="submit">口コミを投稿する</button>
                 </div>
             </form>
         </div>
+        @else
+        <div class="review-card">
+            <form class="review-form" action="{{ route('reviews.update') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+                <div class="form__group">
+                    <div class="form__group--title">
+                        <p>体験を評価してください</p>
+                    </div>
+                    <div class="select__rating">
+                        <input id="star5" type="radio" name="rating" value="5">
+                        <label for="star5">★</label>
+                        <input id="star4" type="radio" name="rating" value="4">
+                        <label for="star4">★</label>
+                        <input id="star3" type="radio" name="rating" value="3">
+                        <label for="star3">★</label>
+                        <input id="star2" type="radio" name="rating" value="2">
+                        <label for="star2">★</label>
+                        <input id="star1" type="radio" name="rating" value="1">
+                        <label for="star1">★</label>
+                    </div>
+                    <div class="form__error">
+                        @error('rating')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="form__group--title">
+                        <p>口コミを投稿</p>
+                    </div>
+                    <div class="input__comment">
+                        <textarea name="comment"></textarea>
+                    </div>
+                    <div class="form__error">
+                        @error('comment')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="form__group--title">
+                        <p>画像の追加</p>
+                    </div>
+                    <div class="form__input--image">
+                        <label class="image-upload" for="image">クリックして写真を追加、またはドラッグアンドドロップ</label>
+                        <input type="file" name="image" id="image">
+                    </div>
+                    <div class="form__error">
+                        @error('image')
+                        {{ $message }}
+                        @enderror
+                    </div>
+                </div>
+                <div class="review-form__button">
+                    <input type="hidden" name="shop_id" value="{{ $shop->id }}">
+                    <button class="review-form__button-submit" type="submit">口コミを編集する</button>
+                </div>
+            </form>
+        </div>
+        @endif
+    </div>
     </div>
 </div>
 @endsection
