@@ -13,6 +13,7 @@ use App\Models\Review;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 
 class ShopController extends Controller
 {
@@ -48,6 +49,41 @@ class ShopController extends Controller
 
         $shops = $items->get();
         
+        return view('index', compact('shops', 'areas', 'genres', 'keyword'));
+    }
+
+    public function sort(Request $request)
+    {
+        $sort_id = $request->input('sort_id');
+
+        $areas = Area::all();
+        $genres = Genre::all();
+        $keyword = null;
+
+        
+        if ($sort_id === '1')
+        {
+            $shops = Shop::inRandomOrder()->get();
+        } elseif ($sort_id === '2') {
+            $query = Shop::query();
+            $shops = $query->leftjoin('reviews', 'shops.id', '=', 'reviews.shop_id')
+                           ->select('shops.*')
+                           ->selectRaw('avg(reviews.rating) as avg_rating')
+                           ->groupBy('shops.id')
+                           ->orderByDesc('avg_rating')
+                           ->get();
+        } elseif ($sort_id === '3') {
+            $query = Shop::query();
+            $shops = $query->leftjoin('reviews', 'shops.id', '=', 'reviews.shop_id')
+                           ->select('shops.*')
+                           ->selectRaw('avg(reviews.rating) as avg_rating')
+                           ->groupBy('shops.id')
+                           ->orderBy('avg_rating')
+                           ->get();
+        } else {
+            $shops = Shop::all();
+        }
+
         return view('index', compact('shops', 'areas', 'genres', 'keyword'));
     }
 

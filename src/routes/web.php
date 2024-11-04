@@ -26,6 +26,7 @@ use App\Http\Controllers\ImageUploadController;
 */
 
 Route::get('/', [ShopController::class, 'index'])->name('shop.index');
+Route::get('/sort', [ShopController::class, 'sort'])->name('shop.sort');
 Route::get('/detail/{shop_id}', [ShopController::class, 'detail']);
 
 Route::get('/menu', [UserContoroller::class, 'menu']);

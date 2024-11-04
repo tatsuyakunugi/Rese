@@ -135,10 +135,17 @@
                         @enderror
                     </div>
                 </div>
+                @if($review)
                 <div class="review-form__button">
                     <input type="hidden" name="shop_id" value="{{ $shop->id }}">
                     <button class="review-form__button-submit" type="submit">口コミを編集する</button>
                 </div>
+                @else
+                <div class="review-form__button">
+                    <input type="hidden" name="shop_id" value="{{ $shop->id }}">
+                    <button class="review-form__button-submit" type="submit">口コミを投稿する</button>
+                </div>
+                @endif
             </form>
         </div>
         @endif

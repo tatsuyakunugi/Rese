@@ -23,9 +23,9 @@ class ReviewController extends Controller
 
         if(Review::where('user_id', $user->id)->where('shop_id', $shop->id)->exists())
         {
-            $reviews = Review::where('user_id', $user->id)->where('shop_id', $shop->id)->get();
+            $review = Review::where('user_id', $user->id)->where('shop_id', $shop->id)->get();
         }else{
-            $reviews = null;
+            $review = null;
         }
 
         return view('review', compact('shop', 'review'));
