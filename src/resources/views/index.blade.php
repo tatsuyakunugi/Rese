@@ -17,6 +17,22 @@
                 <h2 class="header__logo">Rese</h2>
             </div>
             <div class="header__item">
+                <form class="sort-form" action="{{ route('shop.sort') }}" method="get">
+                    @csrf
+                    <div class="form-group">
+                        <select class="sort-select" name="sort_id" id="sort_id">
+                            <option value="">並び替え：評価高/低</option>
+                            <option value="1">ランダム</option>
+                            <option value="2">評価が高い順</option>
+                            <option value="3">評価が低い順</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="sort-form__button-submit" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
                 <form class="search-form" action="{{ route('shop.index') }}" method="get">
                     @csrf
                     <div class="form-group">
