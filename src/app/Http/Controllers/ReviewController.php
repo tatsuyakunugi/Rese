@@ -11,7 +11,9 @@ use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Like;
 use App\Models\Review;
+use App\Models\Reservation;
 use App\Http\Requests\ReviewRequest;
+use Carbon\Carbon;
 
 class ReviewController extends Controller
 {
@@ -36,11 +38,14 @@ class ReviewController extends Controller
         $this->validate($request,[
             'rating' => 'required',
             'comment' => 'required|max:400',
-            'image' => 'nullable|file|mimes:jpeg,png',
+            'image' => 'file|mimes:jpeg,png',
         ]);
 
+        $now = Carbon::now();
         $user = Auth::user();
         $shop = Shop::find($request->input('shop_id'));
+        $reservation = Reservation::where('user_id', $user->id)->where('shop_id', $shop->id)->first();
+        $reservationDateTime = Carbon::createFromTimeString($reservation->reservation_datetime);
         $image_path = '';
         $review = '';
 
@@ -57,18 +62,23 @@ class ReviewController extends Controller
             return back();
         }
 
-        $review = new Review([
-            'user_id' => $user->id,
-            'shop_id' => $shop->id,
-            'rating' => $request->input('rating'),
-            'comment' => $request->input('comment'),
-            'image_path' => $image_path,
-        ]);
-
-        $review->save();
-            
-        Session::put('message', 'ご協力ありがとうございました。');
-        return view('completion');
+        if($reservationDateTime->isPast())
+        {
+            $review = new Review([
+                'user_id' => $user->id,
+                'shop_id' => $shop->id,
+                'rating' => $request->input('rating'),
+                'comment' => $request->input('comment'),
+                'image_path' => $image_path,
+            ]);
+    
+            $review->save();
+                
+            Session::put('message', 'ご協力ありがとうございました。');
+            return view('completion');
+        }else {
+            return back()->with('error', '※レビュー投稿は予約日時以降から可能となります。');
+        }
     }
 
     public function update(ReviewRequest $request)
@@ -76,7 +86,7 @@ class ReviewController extends Controller
         $this->validate($request,[
             'rating' => 'required',
             'comment' => 'required|max:400',
-            'image' => 'nullable|file|mimes:jpeg,png',
+            'image' => 'file|mimes:jpeg,png',
         ]);
 
         $user = Auth::user();

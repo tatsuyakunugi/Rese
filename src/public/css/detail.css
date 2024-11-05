@@ -72,14 +72,53 @@
 
 .review__link {
     padding: 5px 10px;
-    background-color: #fff;
-    color: #0000ff;
+    background-color: #0000ff;
+    color: #fff;
     border: 1px solid #808080;
     border-radius: 3px;
     font-weight: bold;
     font-size: 12px;
     text-decoration: none;
     cursor: pointer;
+}
+
+.review-info {
+    width: 100%;
+    padding: 10px 5px;
+    border-top: 3px solid #808080;
+}
+
+.review-info__header {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.review__update-button {
+    font-size: 14px;
+    text-decoration: none;
+    color: #000;
+}
+
+.review__delete-button {
+    margin-left: 10px;
+}
+
+.delete-button__submit {
+    font-size: 14px;
+    color: #000;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.rating {
+    font-size: 24px;
+    color: #0000ff;
+}
+
+.img img {
+    width: 100%;
 }
 
 .reservation-detail {
