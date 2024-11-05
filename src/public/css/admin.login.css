@@ -1,0 +1,109 @@
+.header {
+    background: #fff;
+}
+  
+.header__inner {
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 1230px;
+    height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .header__inner {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__inner {
+        max-width: 480px;
+        text-align: center;
+    }
+}
+
+.header__logo {
+    color: #0000ff;
+    font-size: 28px;
+}
+
+.login-form__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+@media screen and (max-width: 768px) {
+    .login-form__content {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-form__content {
+        max-width: 480px;
+    }
+}
+  
+.login-form__heading {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .login-form__heading {
+        font-size: 20px;
+    }
+}
+  
+.login-form {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+}
+  
+.form__group {
+    margin-bottom: 15px;
+}
+
+.form__group-title {
+    text-align: left;
+}
+
+.form__label {
+    font-size: 16px;
+    font-weight: bold;
+}
+  
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+}
+  
+.form__input--login-id input,
+.form__input--password input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    appearance: none;
+    cursor: pointer;
+}
+
+.form__button {
+    margin-top: 30px;
+  }
+  
+.form__button-submit {
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #0000ff;
+    color: #fff;
+    cursor: pointer;
+}
