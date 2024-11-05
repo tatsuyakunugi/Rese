@@ -47,8 +47,28 @@
                     </form>
                 </div>
                 <div class="review-info__body">
-                    <p class="rating">{{ $review->rating }}</p>
+                    @switch($review->rating)
+                        @case('1')
+                            <p class="rating">★☆☆☆☆</p>
+                            @break
+                        @case('2')
+                            <p class="rating">★★☆☆☆</p>
+                            @break
+                        @case('3')
+                            <p class="rating">★★★☆☆</p>
+                            @break
+                        @case('4')
+                            <p class="rating">★★★★☆</p>
+                            @break
+                        @case('5')
+                            <p class="rating">★★★★★</p>
+                            @break
+                        @default
+                    @endswitch
                     <p class="comment">{{ $review->comment }}</p>
+                    <div class="img">
+                        <img src="{{ Storage::url($review->image_path) }}" alt="">
+                    </div>
                 </div>
             </div>
             @endif
