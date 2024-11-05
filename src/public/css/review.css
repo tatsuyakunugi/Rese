@@ -11,8 +11,9 @@
 }
 
 .shop-card {
-    width: 30%;
-    margin: 20px auto;
+    width: 300px;
+    height: 450px;
+    margin-top: 20px;
     margin-right: 10px;
     background-color: #fff;
     border: 1px solid #808080;
@@ -85,12 +86,14 @@
 .review-card {
     width: 60%;
     margin-bottom: 20px;
-    padding: 10px 20px;
+    padding: 10px 30px;
+    border-left: 3px solid #808080;
 }
 
 @media screen and (max-width: 480px) {
     .review-card {
       width: 100%;
+      border-left: none;
     }
 }
 
@@ -150,10 +153,11 @@
 }
 
 .image-upload {
+    width: 100%;
     padding: 10px;
     background-color: #fff;
     color: #000000;
-    font-size: 14px;
+    font-size: 10px;
     border: 1px solid #808080;
     border-radius: 3px;
     cursor: pointer;
@@ -164,7 +168,7 @@
 }
 
 .review-form__button {
-    margin-bottom: 20px;
+    margin-top: 50px;
     text-align: center;
 }
 
