@@ -17,6 +17,13 @@
                 </a>
             </div>
         </div>
+        <div class="link-form">
+            <div class="csv-page__link">
+                <a class="link-form__button" href="/admin/csv">
+                    店舗登録
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
