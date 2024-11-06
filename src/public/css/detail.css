@@ -13,6 +13,7 @@
 .shop-detail {
     width: 45%;
     margin-bottom: 20px;
+    border-bottom: 3px solid #808080;
 }
 
 @media screen and (max-width: 480px) {
@@ -70,7 +71,7 @@
     text-align: center;
 }
 
-.review__link {
+.review-list__link {
     padding: 5px 10px;
     background-color: #0000ff;
     color: #fff;
@@ -80,6 +81,12 @@
     font-size: 12px;
     text-decoration: none;
     cursor: pointer;
+}
+
+.review__link-button {
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
 }
 
 .review-info {
