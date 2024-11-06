@@ -1,6 +1,6 @@
 # Rese
 
-![image](https://github.com/user-attachments/assets/7600d790-b062-4f06-93d6-8cb5c3cdda72)
+![スクリーンショット 2024-11-06 220725](https://github.com/user-attachments/assets/2389a9d4-88a2-48c0-b8be-4dcc1a763e0d)
 
 このアプリは飲食店予約サービスアプリになります。
 
