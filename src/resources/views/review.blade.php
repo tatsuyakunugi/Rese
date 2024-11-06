@@ -31,15 +31,15 @@
                         <p>体験を評価してください</p>
                     </div>
                     <div class="select__rating">
-                        <input id="star5" type="radio" name="rating" value="5">
+                        <input id="star5" type="radio" name="rating" value="5" {{ old ('rating') == '5' ? 'checked' : '' }}>
                         <label for="star5">★</label>
-                        <input id="star4" type="radio" name="rating" value="4">
+                        <input id="star4" type="radio" name="rating" value="4" {{ old ('rating') == '4' ? 'checked' : '' }}>
                         <label for="star4">★</label>
-                        <input id="star3" type="radio" name="rating" value="3">
+                        <input id="star3" type="radio" name="rating" value="3" {{ old ('rating') == '3' ? 'checked' : '' }}>
                         <label for="star3">★</label>
-                        <input id="star2" type="radio" name="rating" value="2">
+                        <input id="star2" type="radio" name="rating" value="2" {{ old ('rating') == '2' ? 'checked' : '' }}>
                         <label for="star2">★</label>
-                        <input id="star1" type="radio" name="rating" value="1">
+                        <input id="star1" type="radio" name="rating" value="1" {{ old ('rating') == '1' ? 'checked' : '' }}>
                         <label for="star1">★</label>
                     </div>
                     <div class="form__error">
@@ -53,7 +53,7 @@
                         <p>口コミを投稿</p>
                     </div>
                     <div class="input__comment">
-                        <textarea name="comment"></textarea>
+                        <textarea name="comment">{{ old('comment') }}</textarea>
                     </div>
                     <div class="form__error">
                         @error('comment')
@@ -91,15 +91,15 @@
                         <p>体験を評価してください</p>
                     </div>
                     <div class="select__rating">
-                        <input id="star5" type="radio" name="rating" value="5">
+                        <input id="star5" type="radio" name="rating" value="5" {{ old ('rating', $review->rating) == '5' ? 'checked' : '' }}>
                         <label for="star5">★</label>
-                        <input id="star4" type="radio" name="rating" value="4">
+                        <input id="star4" type="radio" name="rating" value="4" {{ old ('rating', $review->rating) == '4' ? 'checked' : '' }}>
                         <label for="star4">★</label>
-                        <input id="star3" type="radio" name="rating" value="3">
+                        <input id="star3" type="radio" name="rating" value="3" {{ old ('rating', $review->rating) == '3' ? 'checked' : '' }}>
                         <label for="star3">★</label>
-                        <input id="star2" type="radio" name="rating" value="2">
+                        <input id="star2" type="radio" name="rating" value="2" {{ old ('rating', $review->rating) == '2' ? 'checked' : '' }}>
                         <label for="star2">★</label>
-                        <input id="star1" type="radio" name="rating" value="1">
+                        <input id="star1" type="radio" name="rating" value="1" {{ old ('rating', $review->rating) == '1' ? 'checked' : '' }}>
                         <label for="star1">★</label>
                     </div>
                     <div class="form__error">
@@ -113,7 +113,7 @@
                         <p>口コミを投稿</p>
                     </div>
                     <div class="input__comment">
-                        <textarea name="comment"></textarea>
+                        <textarea name="comment">{{ old('comment', $review->comment) }}</textarea>
                     </div>
                     <div class="form__error">
                         @error('comment')
@@ -135,17 +135,10 @@
                         @enderror
                     </div>
                 </div>
-                @if($review)
                 <div class="review-form__button">
                     <input type="hidden" name="shop_id" value="{{ $shop->id }}">
                     <button class="review-form__button-submit" type="submit">口コミを編集する</button>
                 </div>
-                @else
-                <div class="review-form__button">
-                    <input type="hidden" name="shop_id" value="{{ $shop->id }}">
-                    <button class="review-form__button-submit" type="submit">口コミを投稿する</button>
-                </div>
-                @endif
             </form>
         </div>
         @endif
