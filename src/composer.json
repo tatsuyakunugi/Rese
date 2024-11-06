@@ -12,6 +12,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.12",
+        "maatwebsite/excel": "^1.1",
         "nesbot/carbon": "^2.31",
         "simplesoftwareio/simple-qrcode": "^0.0.4@beta"
     },
