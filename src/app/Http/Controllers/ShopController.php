@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
 use App\Models\Like;
 use App\Models\Review;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\DB;
+use App\Models\Reservation;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -89,17 +87,33 @@ class ShopController extends Controller
 
     public function detail($id)
     {
-        $user = Auth::user();
         $shop = Shop::find($id);
-        $reviews = '';
+        $user = '';
+        $review = '';
+        $reservation = '';
 
-        if(Review::where('shop_id', $shop->id)->exists())
+        if(Auth::user()){
+            $user = Auth::user();
+            if(Review::where('user_id', $user->id)->where('shop_id', $shop->id)->exists())
         {
-            $reviews = Review::where('shop_id', $shop->id)->get();
+            $review = Review::where('user_id', $user->id)->where('shop_id', $shop->id)->first();
         }else{
-            $reviews = null;
+            $review = null;
+        }
+
+        if(Reservation::where('user_id', $user->id)->where('shop_id', $shop->id)->exists())
+        {
+            $reservation = Reservation::where('user_id', $user->id)->where('shop_id', $shop->id)->first();
+        }else{
+            $reservation = null;
         }
         
-        return view('detail', compact('user', 'shop', 'reviews'));
+        return view('detail', compact('user', 'shop', 'review', 'reservation'));
+
+        }else{
+
+            return view('detail', compact('user', 'shop', 'review', 'reservation'));
+
+        }    
     }
 }

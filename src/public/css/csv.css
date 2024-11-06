@@ -1,0 +1,70 @@
+.csv-page__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+@media screen and (max-width: 768px) {
+    .csv-page__content {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .csv-page__content {
+        max-width: 480px;
+    }
+}
+  
+.csv-page__heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #ddd;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.csv-page__heading--item {
+    margin-right: 30px;
+}
+
+.top-page__link {
+    padding: 2px 5px;
+    border: 3px solid #0000ff;
+    border-radius: 3px;
+    font-size: 18px;
+    color: #0000ff;
+    text-decoration: none;
+}
+
+.csv-page__body {
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
+
+.form__input--image,
+.form__input--csv {
+    padding: 30px;
+}
+
+.message {
+    font-weight: bold;
+}
+
+.error {
+    color: #ff0000;
+}
+
+.form__button-submit {
+    padding: 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #0000ff;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}

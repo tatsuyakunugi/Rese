@@ -46,6 +46,31 @@
             </div>
             <div class="detail-card__group">
                 <div class="detail-card__title">
+                    <p class="detail-card__tag">評価：</p>
+                </div>
+                <div class="detail-card__item">
+                    @switch($review->rating)
+                        @case('1')
+                            <p class="rating">★☆☆☆☆</p>
+                            @break
+                        @case('2')
+                            <p class="rating">★★☆☆☆</p>
+                            @break
+                        @case('3')
+                            <p class="rating">★★★☆☆</p>
+                            @break
+                        @case('4')
+                            <p class="rating">★★★★☆</p>
+                            @break
+                        @case('5')
+                            <p class="rating">★★★★★</p>
+                            @break
+                        @default
+                    @endswitch  
+                </div>
+            </div>
+            <div class="detail-card__group">
+                <div class="detail-card__title">
                     <p class="detail-card__tag">投稿内容：</p>
                 </div>
                 <div class="detail-card__item">

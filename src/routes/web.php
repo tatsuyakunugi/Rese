@@ -11,8 +11,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminDeleteReviewController;
-use App\Http\Controllers\ImageUploadController;
-//use App\Http\Controllers\ShopUploadController;
+use App\Http\Controllers\CsvController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,8 +80,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::delete('/admin/review_detail/{review_id}', [AdminDeleteReviewController::class, 'destroy'])->name('admin.reviewDestroy');
 });
 
-Route::get('/image', [ImageUploadController::class, 'image']);
-Route::post('/image_upload', [ImageUploadController::class, 'store'])->name('image_upload');
-
-//Route::get('/create', [ShopUploadController::class, 'create'])->name('create');
-//Route::post('/image_upload', [ShopUploadController::class, 'store'])->name('shop_upload');
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/admin/csv', [CsvController::class, 'getCsv'])->name('csv.show');
+    Route::post('/admin/csv/upload', [CsvController::class, 'store'])->name('csv.upload');
+});

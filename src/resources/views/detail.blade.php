@@ -26,15 +26,14 @@
             <p>{{ $shop->content }}</p>
         </div>
         <div class="review__link-form">
-            <a class="review__link" href="/review_list/{{ $shop->id }}">全ての口コミ情報</a>
+            <a class="review-list__link" href="/review_list/{{ $shop->id }}">全ての口コミ情報</a>
         </div>
         @if(Auth::check())
-        @if(is_null($reviews))
+        @if(is_null($review) && $reservation)
         <div class="reviwe__link">
             <a class="review__link-button" href="/review/{{ $shop->id }}">口コミを投稿する</a>
         </div>
-        @else
-        @foreach($reviews as $review)
+        @elseif($review)
             @if(($user->id) == ($review->user_id))
             <div class="review-info">
                 <div class="review-info__header">
@@ -72,7 +71,6 @@
                 </div>
             </div>
             @endif
-        @endforeach
         @endif
         @endif
     </div>

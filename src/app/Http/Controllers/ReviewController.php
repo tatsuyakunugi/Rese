@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use App\Models\User;
 use App\Models\Shop;
 use App\Models\Area;
 use App\Models\Genre;
@@ -25,7 +24,7 @@ class ReviewController extends Controller
 
         if(Review::where('user_id', $user->id)->where('shop_id', $shop->id)->exists())
         {
-            $review = Review::where('user_id', $user->id)->where('shop_id', $shop->id)->get();
+            $review = Review::where('user_id', $user->id)->where('shop_id', $shop->id)->first();
         }else{
             $review = null;
         }
