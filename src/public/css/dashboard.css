@@ -49,7 +49,8 @@
     }
 }
 
-.user-list__link {
+.user-list__link,
+.csv-page__link {
     width: 100%;
 }
 
