@@ -68,15 +68,15 @@
 .review__link-form {
     margin-top: 20px;
     margin-bottom: 20px;
+    padding: 5px 10px;
     text-align: center;
+    border: none;
+    border-radius: 3px;
+    background-color: #0033FF;
 }
 
 .review-list__link {
-    padding: 5px 10px;
-    background-color: #0000ff;
     color: #fff;
-    border: 1px solid #808080;
-    border-radius: 3px;
     font-weight: bold;
     font-size: 12px;
     text-decoration: none;
