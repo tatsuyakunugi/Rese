@@ -66,7 +66,7 @@
                         <p>画像の追加</p>
                     </div>
                     <div class="form__input--image">
-                        <label class="image-upload" for="image">クリックして写真を追加、またはドラッグアンドドロップ</label>
+                        <label class="image-upload" for="image">クリックして写真を追加<br>またはドラッグアンドドロップ</label>
                         <input type="file" name="image" id="image">
                     </div>
                     <div class="form__error">
@@ -126,7 +126,7 @@
                         <p>画像の追加</p>
                     </div>
                     <div class="form__input--image">
-                        <label class="image-upload" for="image">クリックして写真を追加、またはドラッグアンドドロップ</label>
+                        <label class="image-upload" for="image">クリックして写真を追加<br>またはドラッグアンドドロップ</label>
                         <input type="file" name="image" id="image">
                     </div>
                     <div class="form__error">
