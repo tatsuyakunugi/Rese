@@ -24,7 +24,7 @@ class CsvRequest extends FormRequest
     public function rules()
     {
         return [
-            'csv_file' => 'required|file',
+            'csv_file' => 'required|file|mimes:csv,txt',
             'shop_image' => 'required|file|mimes:jpeg,png',
         ];
     }
@@ -34,6 +34,7 @@ class CsvRequest extends FormRequest
         return [
             'csv_file.required' => 'csvファイルは必須です',
             'csv_file.file' => 'csvファイルはファイル形式の物を選択してください',
+            'csv_file.mimes'     => 'ファイル拡張子がcsv形式の物を選択してください',
             'shop_image.required' => '店舗画像ファイルは必須です',
             'shop_image.file' => '画像ファイルを選択してください',
             'shop_image.mimes' => '画像はjpeg、もしくはpng形式の物を選択してください',

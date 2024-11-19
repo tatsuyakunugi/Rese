@@ -17,22 +17,27 @@
         </div>
     </div>
     <div class="csv-page__body">
-        <form class="csv-form" action="{{ route('csv.upload') }}" enctype="multipart/form-data">
+        <form class="csv-form" action="{{ route('csv.upload') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form__input--image">
                 <label class="image-upload" for="shop_image">店舗画像選択</label>
                 <input type="file" name="shop_image" id="shop_image">
             </div>
             <div class="form__input--csv">
-                <label class="csv-upload" for="csv-file">アップロードファイル</label>
-                <input type="file" name="csv-file" accept=".csv.txt">
-                @if($errors->all())
-                    <p class="error">{{ $errors }}</p>
-                @endif
+                <label class="csv-upload" for="csv_file">アップロードファイル選択</label>
+                <input type="file" name="csv_file" id="csv_file">                
             </div>
             <p class="message">{{ $message }}</p>
             <button class="form__button-submit">アップロードする</button>
         </form>
+        @if($errors->all())
+        <div class="form__error">
+            <p class="form__error--heading">※入力に誤りがあります</p>
+            @foreach($errors->all() as $error)
+            <p class="error">{{ $error }}</p>
+            @endforeach
+        </div>
+        @endif
     </div>
 </div>
 @endsection
