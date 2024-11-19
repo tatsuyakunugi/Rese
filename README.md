@@ -98,7 +98,7 @@
 
 ・管理者はcsvインポートにより店舗の新規登録が可能
 
-"C:\Users\user\OneDrive\画像\スクリーンショット\スクリーンショット 2024-11-19 094054.png"
+![スクリーンショット 2024-11-19 094054](https://github.com/user-attachments/assets/f12f3c37-1e30-4a0d-9539-c2c16dc30a12)
 
 ## 使用技術
 
