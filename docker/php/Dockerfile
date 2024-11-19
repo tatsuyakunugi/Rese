@@ -10,4 +10,9 @@ RUN curl -sS https://getcomposer.org/installer | php \
   && mv composer.phar /usr/local/bin/composer \
   && composer self-update
 
+RUN apt-get update -y && apt-get install -y libwebp-dev libjpeg62-turbo-dev libpng-dev libxpm-dev \
+  libfreetype6-dev
+
+RUN docker-php-ext-install gd
+
 WORKDIR /var/www
