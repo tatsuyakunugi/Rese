@@ -62,10 +62,17 @@
                     </div>
                 </div>
                 <div class="review-card__group">
+                    @if(($review->created_at) == ($review->updated_at))
                     <div class="review-card__item">
                         <span class="card__tag">投稿日</span>
                         <p class="posted-date">{{ ($review->created_at)->format('Y-m-d') }}</p>
                     </div>
+                    @else
+                    <div class="review-card__item">
+                        <span class="card__tag">投稿日</span>
+                        <p class="posted-date">{{ ($review->updated_at)->format('Y-m-d') }}(編集済み)</p>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
