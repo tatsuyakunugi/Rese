@@ -1,10 +1,10 @@
-.review__content--inner{
+.review-form__inner {
     display: flex;
     justify-content: space-between;
 }
 
 @media screen and (max-width: 480px) {
-    .review__content--inner {
+    .review-form__inner {
         display: block;
         justify-content: center;
     }
@@ -12,7 +12,7 @@
 
 .shop-card {
     width: 300px;
-    height: 450px;
+    height: 420px;
     margin-top: 20px;
     margin-right: 10px;
     background-color: #fff;
@@ -50,11 +50,6 @@
 .shop-area,
 .shop-genre {
     display: inline-block;
-}
-
-.shop-card__items {
-    display: flex;
-    justify-content: space-between;
 }
 
 .shop__link,
@@ -122,6 +117,11 @@
     font-size: 16px;
 }
 
+.input__comment--info {
+    text-align: right;
+    font-size: 12px;
+}
+
 .select__rating {
     display: flex;
     flex-direction: row-reverse;
@@ -177,11 +177,13 @@
 }
 
 .review-form__button {
-    margin-top: 50px;
+    width: 50%;
+    margin: 30px auto 0;
     text-align: center;
 }
 
 .review-form__button-submit{
+    width: 100%;
     padding: 10px 30px;
     background-color: #fff;
     color: #000;
